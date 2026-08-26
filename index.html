@@ -3,651 +3,3066 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="your company Dental — modern, trusted dental care for brighter smiles."
-    />
-    <title>"your company" Dental | Expert Dental Care</title>
+    <title>[Your Company] Dental Clinic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      :root {
+        --navy: #111b31;
+        --navy-2: #132540;
+        --navy-3: #0a1420;
+        --gold: #eeab35;
+        --gold-dark: #d6931f;
+        --blue: #1c7fbe;
+        --teal: #22c1d6;
+        --cream: #fbf0dc;
+        --cream-2: #faf4e9;
+        --ink: #16202e;
+        --gray: #5b6472;
+        --gray-light: #8892a0;
+        --line: #e7e9ee;
+        --bg-soft: #f5f6f8;
+        --white: #ffffff;
+        --radius-lg: 24px;
+        --radius-md: 16px;
+        --radius-sm: 12px;
+        --shadow: 0 10px 30px rgba(14, 27, 44, 0.08);
+        --shadow-lg: 0 20px 50px rgba(14, 27, 44, 0.16);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--ink);
+        background: var(--white);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .display {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+      .container {
+        width: 90%;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      section {
+        position: relative;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--cream);
+        color: var(--gold-dark);
+        font-weight: 700;
+        font-size: 14px;
+        padding: 9px 20px;
+        border-radius: 999px;
+        margin-bottom: 22px;
+      }
+      .eyebrow.dark {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+      }
+      .eyebrow svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+      .section-head {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 56px;
+      }
+      .section-head h2 {
+        font-size: 44px;
+        line-height: 1.15;
+        margin-bottom: 20px;
+      }
+      .section-head p {
+        color: var(--gray);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 16px 30px;
+        border-radius: 999px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
+        white-space: nowrap;
+      }
+      .btn svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+      .btn-gold {
+        background: linear-gradient(180deg, #f2b545, var(--gold));
+        color: #231600;
+        box-shadow: 0 12px 28px rgba(238, 171, 53, 0.35);
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 34px rgba(238, 171, 53, 0.45);
+      }
+      .btn-outline-dark {
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.35);
+        color: #fff;
+      }
+      .btn-outline-dark:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .btn-block {
+        width: 100%;
+      }
+      .shadow{
+        position: absolute;
+        width: 400px;
+        height: 400px;
+      }
+
+      .gold-shadow{
+        background: radial-gradient(circle at 0% 100%,#e2a41569,transparent 70%);
+         bottom: 0;
+        left: 0;
+      }
+      .light-shadow{
+        background: radial-gradient(circle at 100% 0%,#dbe1ea36,transparent 70%);
+        top: 0;
+        right: 0;
+      }
+
+      .final-goldshadow{
+        background: radial-gradient(circle at 0% 0%,#e2a41569,transparent 70%);
+        bottom: unset;
+        top: 0;
+      }
+      .final-lightshadow{
+        background: radial-gradient(circle at 100% 100%,#dbe1ea36,transparent 70%);
+        top: unset;
+        bottom: 0;
+      }
+      
+      /* HEADER */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 32px;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+     
+      nav.links {
+        display: flex;
+        gap: 38px;
+      }
+      nav.links a {
+        font-weight: 500;
+        font-size: 15.5px;
+        color: #374151;
+        transition: color 0.2s;
+      }
+      nav.links a:hover {
+        color: var(--blue);
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+      }
+      .nav-phone {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--ink);
+      }
+      .nav-phone svg {
+        width: 18px;
+        height: 18px;
+        color: var(--gold-dark);
+      }
+      .btn-sm {
+        padding: 12px 24px;
+        font-size: 15px;
+      }
+      .burger {
+        display: none;
+        background: none;
+        border: none;
+      }
+
+      /* HERO */
+      .hero {
+        background:
+          
+          linear-gradient(
+            160deg,
+            var(--navy) 0%,
+            var(--navy-2) 55%,
+            #0c1928 100%
+          );
+        color: #fff;
+        padding: 90px 0 70px;
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-weight: 800;
+        font-size: 58px;
+        line-height: 1.08;
+        margin-bottom: 26px;
+        color: #fff;
+      }
+      .hero h1 .gold-text {
+        background: linear-gradient(90deg, #ffd479, var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .hero p.lead {
+        font-size: 18px;
+        line-height: 1.65;
+        color: #b7c1d1;
+        max-width: 520px;
+        margin-bottom: 34px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+      }
+      .hero-trust {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #9aa5b5;
+        font-size: 14.5px;
+        margin-bottom: 44px;
+      }
+      .hero-trust svg {
+        width: 16px;
+        height: 16px;
+        color: var(--gold);
+        flex-shrink: 0;
+      }
+      .hero-stats {
+        display: flex;
+        gap: 36px;
+        flex-wrap: wrap;
+      }
+      .hero-stats .stat-block {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .stars {
+        display: flex;
+        gap: 3px;
+        color: var(--gold);
+      }
+      .stars svg {
+        width: 16px;
+        height: 16px;
+      }
+      .hero-stats small {
+        color: #9aa5b5;
+        font-size: 13.5px;
+      }
+      .hero-stats .num {
+        font-size: 26px;
+        font-weight: 800;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .stat-divider {
+        width: 1px;
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .hero-media {
+        position: relative;
+      }
+      .hero-media .frame {
+        position: relative;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        aspect-ratio: 4/4.6;
+        width: 100%;
+        max-height: 520px;
+      }
+      .hero-media .frame::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 100% 100%, #e2a4158a, #e2a41541,#e2a41588);
+      }
+      .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .float-card {
+        position: absolute;
+        left: -24px;
+        bottom: -15px;
+        background: #fff;
+        color: var(--ink);
+        border-radius: 18px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        box-shadow: var(--shadow-lg);
+        max-width: 270px;
+      }
+      .float-card .icon-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold-dark);
+        flex-shrink: 0;
+      }
+      .float-card .icon-badge svg {
+        width: 22px;
+        height: 22px;
+      }
+      .float-card strong {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .float-card span {
+        font-size: 13px;
+        color: var(--gray);
+      }
+      .badge-pill {
+        position: absolute;
+        top: 26px;
+        left: 26px;
+        background: rgba(14, 27, 44, 0.75);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        font-weight: 600;
+        font-size: 13.5px;
+        padding: 9px 16px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .badge-pill svg {
+        width: 15px;
+        height: 15px;
+        color: var(--gold);
+      }
+
+      /* SERVICES */
+      .services {
+        padding: 110px 0;
+        background: #fff;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      .service-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 34px 30px;
+        transition:
+          box-shadow 0.25s,
+          transform 0.25s,
+          border-color 0.25s;
+      }
+      .service-card:hover {
+        box-shadow: var(--shadow);
+        transform: translateY(-4px);
+        border-color: transparent;
+      }
+      .service-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold-dark);
+        margin-bottom: 22px;
+      }
+      .service-icon svg {
+        width: 26px;
+        height: 26px;
+      }
+      .service-card h3 {
+        font-size: 21px;
+        margin-bottom: 10px;
+      }
+      .service-card p {
+        color: var(--gray);
+        font-size: 15.5px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+      .link-arrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--gold-dark);
+        font-weight: 700;
+        font-size: 15px;
+        transition: gap 0.2s;
+      }
+      .link-arrow svg {
+        width: 15px;
+        height: 15px;
+        transition: transform 0.2s;
+      }
+      .link-arrow:hover svg {
+        transform: translateX(3px);
+      }
+
+      /* ABOUT */
+      .about {
+        padding: 110px 0;
+        background: var(--bg-soft);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .about-media {
+        position: relative;
+      }
+      .about-media .main-img {
+        border-radius: 26px;
+        overflow: hidden;
+        aspect-ratio: 4/4.3;
+        box-shadow: var(--shadow);
+      }
+      .about-media .main-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .rank-badge {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        background: var(--gold);
+        color: var(--ink);
+        border-radius: 16px;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 12px 24px rgba(214, 147, 31, 0.35);
+        max-width: 230px;
+      }
+      .rank-badge svg {
+        width: 26px;
+        height: 26px;
+        flex-shrink: 0;
+      }
+      .rank-badge strong {
+        display: block;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+      .rank-badge span {
+        font-size: 12.5px;
+        font-weight: 600;
+        opacity: 0.85;
+      }
+      .years-card {
+        position: absolute;
+        left: -20px;
+        bottom: -20px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: var(--shadow-lg);
+      }
+      .years-card .icon-badge {
+        width: 42px;
+        height: 42px;
+        border-radius: 11px;
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold-dark);
+      }
+      .years-card .icon-badge svg {
+        width: 20px;
+        height: 20px;
+      }
+      .years-card strong {
+        display: block;
+        font-size: 19px;
+        font-weight: 800;
+      }
+      .years-card span {
+        font-size: 12.5px;
+        color: var(--gray);
+      }
+      .inset-img {
+        position: absolute;
+        right: -18px;
+        bottom: -25px;
+        width: 44%;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 4px solid #fff;
+        box-shadow: var(--shadow-lg);
+        aspect-ratio: 1/1;
+      }
+      .inset-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .about-content h2 {
+        font-size: 38px;
+        line-height: 1.18;
+        margin-bottom: 22px;
+      }
+      .about-content p {
+        color: var(--gray);
+        font-size: 16.5px;
+        line-height: 1.75;
+        margin-bottom: 18px;
+      }
+      .location-strip {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--cream);
+        color: var(--gold-dark);
+        font-weight: 600;
+        font-size: 14.5px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        margin: 26px 0 30px;
+      }
+      .location-strip svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 28px;
+        margin-bottom: 34px;
+      }
+      .feature-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .feature-item .icon-badge {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold-dark);
+        flex-shrink: 0;
+      }
+      .feature-item .icon-badge svg {
+        width: 19px;
+        height: 19px;
+      }
+      .feature-item strong {
+        display: block;
+        font-size: 15.5px;
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+      .feature-item span {
+        font-size: 13.5px;
+        color: var(--gray);
+      }
+
+      /* GALLERY (custom addition, matching theme) */
+      .gallery {
+        padding: 110px 0;
+        background: #fff;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 150px;
+        gap: 16px;
+      }
+      .gallery-item {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      .gallery-item.big {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.08);
+      }
+      .gallery-item .tag {
+        position: absolute;
+        left: 14px;
+        bottom: 14px;
+        background: rgba(14, 27, 44, 0.72);
+        backdrop-filter: blur(4px);
+        color: #fff;
+        font-size: 12.5px;
+        font-weight: 600;
+        padding: 7px 13px;
+        border-radius: 999px;
+      }
+      .gallery-cta {
+        text-align: center;
+        margin-top: 44px;
+      }
+
+      .how {
+        background: #fff;
+        padding: 110px 0;
+      }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 26px;
+      }
+      .step-card {
+        position: relative;
+        min-height: 300px;
+        border: 1px solid #dfe3e8;
+        border-radius: 18px;
+        padding: 37px 38px;
+        box-shadow: 0 3px 7px rgba(20, 30, 45, 0.08);
+        overflow: hidden;
+      }
+      .step-number {
+        position: absolute;
+        top: 12px;
+        right: 24px;
+        font-family: monospace;
+        font-size: 60px;
+        font-weight: 900;
+        color: #f0f2f5;
+        line-height: 1;
+      }
+      .step-icon {
+        position: relative;
+        width: 65px;
+        height: 65px;
+        border-radius: 16px;
+        background: #fbf3df;
+        color: #e2a615;
+        display: grid;
+        place-items: center;
+        font-size: 29px;
+        margin-bottom: 28px;
+      }
+      .step-card h3 {
+        font-size: 22px;
+        line-height: 1.35;
+        margin-bottom: 10px;
+        position: relative;
+      }
+      .step-card p {
+        font-size: 17px;
+        color: #607087;
+        line-height: 1.62;
+        position: relative;
+      }
+      /* RESULTS */
+      .results {
+        padding: 110px 0;
+        background: var(--bg-soft);
+      }
+      .results-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      .result-card {
+        background: #fff;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .ba-imgs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        aspect-ratio: 2/1.35;
+        gap: 3px;
+      }
+      .ba-imgs .ba {
+        position: relative;
+        overflow: hidden;
+      }
+      .ba-imgs .ba:first-child::after{
+        content: "";
+        position: absolute;
+        inset: 0;background: radial-gradient( transparent 50%,  #ff00005e);
+      }
+      .ba-imgs .ba:last-child::after{
+        content: "";
+        position: absolute;
+        inset: 0;background: radial-gradient( transparent 50%,  #02c40234);
+      }
+      .ba-imgs img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .ba-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 999px;
+        color: #fff;
+      }
+      .ba-tag.before {
+        background: var(--navy);
+      }
+      .ba-tag.after {
+        background: var(--gold);
+        color: var(--ink);
+      }
+      .result-body {
+        padding: 24px 26px 28px;
+      }
+      .result-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .result-top h3 {
+        font-size: 19px;
+      }
+      .result-body p {
+        color: var(--gray);
+        font-size: 15px;
+        margin-bottom: 14px;
+      }
+
+      /* Added sections */
+      .team {
+        background: #f3f3f3;
+        padding: 110px 0;
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .team-visual {
+        position: relative;
+        
+      }
+      .team-visual > img {
+        width: 100%;
+        height: 620px;
+        object-fit: cover;
+        border-radius: 28px;
+        box-shadow: 0 18px 40px rgba(20, 30, 45, 0.14);
+      }
+      .specialists-card {
+        position: absolute;
+        left: 28px;
+        right: 28px;
+        bottom: -28px;
+        background: #fff;
+        border-radius: 20px;
+        padding: 20px 28px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.16);
+      }
+      .specialists-card strong,
+      .specialists-card small {
+        display: block;
+      }
+      .specialists-card small {
+        color: #607087;
+      }
+      .doctor-dots {
+        margin-left: auto;
+        display: flex;
+      }
+      .doctor-dots span {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #fbf3df;
+        color: #d9a00c;
+        font-size: 13px;
+        font-weight: 700;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: -5px;
+      }
+      .doctor-dots span:nth-child(2) {
+        background: #e8edf4;
+        color: #4c5d73;
+      }
+      .team-copy h2 {
+        font-size: 47px;
+        line-height: 1.15;
+        margin: 10px 0 25px;
+      }
+      .team-copy span {
+        margin-bottom: 0;
+      }
+
+      .team-copy > p {
+        font-size: 19px;
+        color: #607087;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+      .team-features {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 32px;
+      }
+      .team-features > div {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .team-features > div > span {
+        width: 54px;
+        height: 54px;
+        border-radius: 15px;
+        background: #fbf3df;
+        color: #e2a615;
+        display: grid;
+        place-items: center;
+        font-size: 23px;
+        flex: none;
+      }
+      .team-features strong,
+      .team-features small {
+        display: block;
+      }
+      .team-features strong {
+        font-size: 18px;
+      }
+      .team-features small {
+        font-size: 16px;
+        color: #607087;
+        margin-top: 2px;
+      }
+      /* BOOKING */
+      .booking {
+        background: linear-gradient(
+          150deg,
+          var(--navy) 0%,
+          var(--navy-2) 60%,
+          #0c1928 100%
+        );
+        padding: 110px 0;
+        color: #fff;
+      }
+      .booking-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .booking h2 {
+        font-size: 42px;
+        line-height: 1.15;
+        color: #fff;
+        margin: 20px 0 20px;
+      }
+      .booking > .container > .booking-grid > .booking-copy > p {
+        color: #b7c1d1;
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 34px;
+        max-width: 480px;
+      }
+      .booking-info {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .info-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .info-row .icon-badge {
+        width: 46px;
+        height: 46px;
+        border-radius: 13px;
+        background: rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        flex-shrink: 0;
+      }
+      .info-row .icon-badge svg {
+        width: 20px;
+        height: 20px;
+      }
+      .info-row span {
+        font-size: 15.5px;
+        color: #dbe1ea;
+        font-weight: 500;
+      }
+      .booking-card {
+        background: #fff;
+        color: var(--ink);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        box-shadow: var(--shadow-lg);
+      }
+      .booking-card h3 {
+        font-size: 25px;
+        margin-bottom: 8px;
+      }
+      .booking-card > p {
+        color: var(--gray);
+        font-size: 15px;
+        margin-bottom: 26px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+      .field label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1.5px solid var(--line);
+        background: var(--bg-soft);
+        border-radius: 12px;
+        padding: 13px 16px;
+        font-size: 15px;
+        font-family: inherit;
+        color: var(--ink);
+        transition: border-color 0.2s;
+      }
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        outline: none;
+        border-color: var(--gold);
+      }
+      .field {
+        margin-bottom: 18px;
+      }
+      .field textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .ceo {
+        background: radial-gradient(
+          circle at 90% 12%,
+          #344157 0,
+          #1c2940 27%,
+          #111b31 65%
+        );
+        color: #fff;
+        padding: 92px 0 120px;
+      }
+      .ceo-container {
+        max-width: 1050px;
+      }
+      .ceo-head {
+        text-align: center;
+      }
+      .ceo-pill {
+        background: #ffbd08;
+        color: #111;
+        margin-bottom: 0;
+      }
+      .ceo-head h2 {
+        color: #fbf3df;
+        font-size: 42px;
+        margin: 17px 0 48px;
+        letter-spacing: -1px;
+      }
+      .ceo-card {
+        background: rgba(49, 63, 86, 0.62);
+        border: 1px solid rgba(167, 181, 203, 0.22);
+        border-radius: 28px;
+        padding: 52px 55px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      }
+      .quote-mark {
+        font-size: 76px;
+        line-height: 0.6;
+        color: #ffca28;
+        font-weight: 800;
+        margin-bottom: 22px;
+      }
+      .ceo-card > p {
+        font-size: 20px;
+        line-height: 1.6;
+        color: #e6e9ef;
+      }
+      .ceo-divider {
+        height: 1px;
+        background: rgba(199, 207, 220, 0.22);
+        margin: 34px 0;
+      }
+      .ceo-profile {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .ceo-profile img {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid #ffca28;
+      }
+      .ceo-profile strong,
+      .ceo-profile small {
+        display: block;
+      }
+      .ceo-profile strong {
+        font-size: 21px;
+      }
+      .ceo-profile small {
+        font-size: 16px;
+        color: #bec7d5;
+        margin-top: 2px;
+      }
+      /* TESTIMONIALS */
+      .testimonials {
+        padding: 110px 0;
+        background: var(--bg-soft);
+      }
+      
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .review-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 28px 26px;
+      }
+      .review-card .stars {
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+      .review-card .stars svg {
+        width: 16px;
+        height: 16px;
+      }
+      .review-card blockquote {
+        font-size: 15.5px;
+        line-height: 1.65;
+        color: #374151;
+        margin-bottom: 22px;
+      }
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--cream);
+        color: var(--gold-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 13px;
+        flex-shrink: 0;
+      }
+      .reviewer strong {
+        display: block;
+        font-size: 14.5px;
+        font-weight: 700;
+      }
+      .reviewer span {
+        font-size: 13px;
+        color: var(--gray);
+      }
+      .testimonial-note {
+        text-align: center;
+        color: var(--gray-light);
+        font-size: 13.5px;
+        margin-top: 30px;
+      }
+
+      /* FAQ */
+      .faq {
+        padding: 110px 0;
+        background: var(--bg-soft);
+      }
+      .faq-list {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .faq-item {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+      }
+      .faq-q {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 22px 26px;
+        cursor: pointer;
+      }
+      .faq-q h4 {
+        font-size: 16.5px;
+        font-weight: 700;
+      }
+      .faq-toggle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold-dark);
+        flex-shrink: 0;
+        transition: transform 0.25s;
+      }
+      .faq-toggle svg {
+        width: 14px;
+        height: 14px;
+      }
+      .faq-item.open .faq-toggle {
+        transform: rotate(180deg);
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .faq-item.open .faq-a {
+        max-height: 220px;
+      }
+      .faq-a p {
+        padding: 0 26px 24px;
+        color: var(--gray);
+        font-size: 15px;
+        line-height: 1.7;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+        margin-top: -1px;
+      }
+      .faq-more {
+        text-align: center;
+        margin-top: 34px;
+      }
+
+      /* VISIT US */
+      .visit {
+        padding: 110px 0;
+        background: #fff;
+      }
+      .visit-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 60px;
+      }
+      .visit-info {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+      .visit-row {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .visit-row .icon-badge {
+        width: 46px;
+        height: 46px;
+        border-radius: 13px;
+        background: var(--cream);
+        color: var(--gold-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .visit-row .icon-badge svg {
+        width: 21px;
+        height: 21px;
+      }
+      .visit-row strong {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .visit-row div p {
+        color: var(--gray);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .maps-col {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .map-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .map-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 22px;
+        background: var(--bg-soft);
+        border-bottom: 1px solid var(--line);
+      }
+      .map-head h4 {
+        font-size: 16.5px;
+      }
+      .map-tag {
+        background: var(--cream);
+        color: var(--gold-dark);
+        font-size: 12.5px;
+        font-weight: 700;
+        padding: 6px 13px;
+        border-radius: 999px;
+      }
+      .map-frame {
+        aspect-ratio: 16/8;
+      }
+      .map-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* FINAL CTA */
+      .final-cta {
+        background:
+          radial-gradient(
+            1000px 450px at 90% 20%,
+            rgba(28, 127, 190, 0.18),
+            transparent 60%
+          ),
+          linear-gradient(
+            160deg,
+            var(--navy) 0%,
+            var(--navy-2) 60%,
+            #0c1928 100%
+          );
+        padding: 100px 0;
+        text-align: center;
+        color: #fff;
+      }
+      .final-cta .eyebrow {
+        margin-bottom: 26px;
+        background: var(--gold);
+        color: var(--ink);
+      }
+      .final-cta h2 {
+        font-size: 46px;
+        line-height: 1.18;
+        color: #fff;
+        max-width: 820px;
+        margin: 0 auto 22px;
+      }
+      .final-cta p {
+        color: #b7c1d1;
+        font-size: 17.5px;
+        line-height: 1.7;
+        max-width: 640px;
+        margin: 0 auto 38px;
+      }
+      .final-cta .hero-actions {
+        justify-content: center;
+        margin-bottom: 26px;
+      }
+      .final-cta .hero-trust {
+        justify-content: center;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--navy-3);
+        color: #c9d1dc;
+        padding: 80px 0 30px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
+        gap: 50px;
+        margin-bottom: 60px;
+      }
+      .footer-brand .logo {
+        margin-bottom: 18px;
+      }
+      .footer-brand p {
+        font-size: 14.5px;
+        line-height: 1.7;
+        color: #93a0b1;
+        margin-bottom: 24px;
+        max-width: 280px;
+      }
+      .social-row {
+        display: flex;
+        gap: 12px;
+      }
+      .social-row a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+      }
+      .social-row a:hover {
+        background: var(--gold);
+        color: var(--ink);
+      }
+      .social-row svg {
+        width: 17px;
+        height: 17px;
+      }
+      footer h5 {
+        color: #fff;
+        font-size: 16.5px;
+        margin-bottom: 22px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .footer-links a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14.5px;
+        color: #a9b3c1;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--gold);
+      }
+      .footer-links svg {
+        width: 13px;
+        height: 13px;
+        color: var(--gold-dark);
+        flex-shrink: 0;
+      }
+      .footer-contact-row {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        font-size: 14.5px;
+        color: #a9b3c1;
+      }
+      .footer-contact-row svg {
+        width: 17px;
+        height: 17px;
+        color: var(--gold);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 26px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 13.5px;
+        color: #7c869a;
+      }
+      /* RESPONSIVE */
+
+      @media (max-width: 1100px) {
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+        .team-visual{
+          max-height: 440px;
+        }
+        .team-visual > img {
+          height: 440px;
+        }
+        .team-copy {
+          padding-top: 30px;
+        }
+        .steps-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 760px) {
+        .team-visual > img {
+          height: 440px;
+        }
+        .specialists-card {
+          left: 14px;
+          right: 14px;
+          padding: 15px 17px;
+        }
+        .doctor-dots span {
+          width: 34px;
+          height: 34px;
+          font-size: 11px;
+        }
+        .team-copy h2 {
+          font-size: 36px;
+        }
+        .team-copy > p {
+          font-size: 17px;
+        }
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
+        .step-card {
+          min-height: 290px;
+          padding: 30px;
+        }
+        .ceo {
+          padding: 70px 0 90px;
+        }
+        .ceo-head h2 {
+          font-size: 34px;
+          margin-bottom: 35px;
+        }
+        .ceo-card {
+          padding: 32px 25px;
+          border-radius: 22px;
+        }
+        .ceo-card > p {
+          font-size: 17px;
+        }
+      }
+      @media (max-width: 1024px) {
+        nav.links {
+          display: none;
+        }
+        .burger {
+          display: block;
+        }
+        .hero-grid,
+        .about-grid,
+        .booking-grid,
+        .visit-grid {
+          grid-template-columns: 1fr;
+        }.hero-media .frame{
+          min-height: 380px;
+        }
+        .services-grid,
+        .results-grid,
+        .review-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .gallery-item.big {
+          grid-column: span 2;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+        }
+        .hero h1 {
+          font-size: 38px;
+        }
+        .section-head h2 {
+          font-size: 30px;
+        }
+        .services-grid,
+        .results-grid,
+        .review-grid,
+        .form-row,
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .hero-stats {
+          gap: 20px;
+        }
+        .rating-stats {
+          gap: 24px;
+        }
+        .nav-right .btn-sm {
+          padding: 10px 16px;
+          font-size: 13px;
+        }
+        .nav-phone {
+          display: none;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+          grid-auto-rows: 120px;
+        }
+        .final-cta h2 {
+          font-size: 32px;
+        }
+        .booking-card {
+          padding: 26px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav container">
-        <a class="brand" href="#home">
-          <span class="brand-mark">✦</span>
-          <span>"your<span>logo</span>"</span>
-        </a>
+    <!-- ICON SPRITE (symbols reused across the page) -->
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-tooth" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 2c-2.2 0-3.5 1-4.8 1-1.6 0-3.2-1-3.2 2 0 3 1 5 1.5 9 .3 2.5 1 6 2.5 6 1.7 0 1.5-4 2-6 .3-1.2 1-2 2-2s1.7.8 2 2c.5 2 .3 6 2 6 1.5 0 2.2-3.5 2.5-6 .5-4 1.5-6 1.5-9 0-3-1.6-2-3.2-2-1.3 0-2.6-1-4.8-1z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="i-award" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="2" />
+          <path
+            d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.9-6.2-3.3-6.2 3.3 1.2-6.9-5-4.9 6.9-1z"
+          />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4 4c0 9 7 16 16 16l3-3.5-6-3-2 2c-2-1-4-3-5-5l2-2-3-6z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24" fill="none">
+          <rect
+            x="3"
+            y="5"
+            width="18"
+            height="16"
+            rx="2"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path
+            d="M3 10h18M8 3v4M16 3v4"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-smile" viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path
+            d="M8 14c1 1.5 2.5 2 4 2s3-.5 4-2"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+          <circle cx="9" cy="10" r="1" fill="currentColor" />
+          <circle cx="15" cy="10" r="1" fill="currentColor" />
+        </symbol>
+        <symbol id="i-brush" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M19 3l2 2-9 9-3 1 1-3 9-9z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9 15l-4 4"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-scan" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4 9V6a2 2 0 012-2h3M17 4h3a2 2 0 012 2v3M20 15v3a2 2 0 01-2 2h-3M7 20H4a2 2 0 01-2-2v-3"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-pulse" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M3 12h4l2-7 4 14 2-7h6"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-smile2" viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <circle cx="9" cy="10" r="1" fill="currentColor" />
+          <circle cx="15" cy="10" r="1" fill="currentColor" />
+          <path
+            d="M9 15c1-1 2-1.5 3-1.5s2 .5 3 1.5"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M5 12h14M13 6l6 6-6 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M6 9l6 6 6-6"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 20s-7-4.4-9.5-9C.8 7.5 3 4 6.5 4c2 0 3.3 1 4.5 2.5C12.2 5 13.5 4 15.5 4 19 4 21.2 7.5 19.5 11 17 15.6 12 20 12 20z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-users" viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="9"
+            cy="8"
+            r="3"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <circle
+            cx="17"
+            cy="9"
+            r="2.5"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path
+            d="M3 20c0-3 3-5 6-5s6 2 6 5M15 15c2.5 0 5 1.5 5 4.5"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path
+            d="M8 12l3 3 5-6"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-map" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 22s7-6.5 7-12A7 7 0 105 10c0 5.5 7 12 7 12z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+          <circle
+            cx="12"
+            cy="10"
+            r="2.3"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+        </symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path
+            d="M12 7v5l3.5 2"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none">
+          <rect
+            x="3"
+            y="5"
+            width="18"
+            height="14"
+            rx="2"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path
+            d="M3 7l9 6 9-6"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="i-quote" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M9 7c-2.8 0-5 2.2-5 5v5h5v-5H6.2C6.6 10 7.6 9 9 9V7zm10 0c-2.8 0-5 2.2-5 5v5h5v-5h-2.8c.4-2 1.4-3 2.8-3V7z"
+          />
+        </symbol>
+        <symbol id="i-help" viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path
+            d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2 1.7-2.5 3.2"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          />
+          <circle cx="12" cy="16.5" r="0.9" fill="currentColor" />
+        </symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 22s7-6.5 7-12A7 7 0 105 10c0 5.5 7 12 7 12z"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+          <circle
+            cx="12"
+            cy="10"
+            r="2.3"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+        </symbol>
+        <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M14 9h3V5.5h-3c-2.2 0-4 1.8-4 4V12H8v3.5h2V22h3.5v-6.5H16l.5-3.5h-3V9.5c0-.3.2-.5.5-.5z"
+          />
+        </symbol>
+        <symbol id="i-ig" viewBox="0 0 24 24" fill="none">
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <circle cx="17.2" cy="6.8" r="1" fill="currentColor" />
+        </symbol>
+        <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M4 4l16 16M20 4L4 20"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="i-yt" viewBox="0 0 24 24" fill="none">
+          <rect
+            x="2.5"
+            y="6"
+            width="19"
+            height="12"
+            rx="3"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" />
+        </symbol>
+      </defs>
+    </svg>
 
-        <button
-          class="menu-toggle"
-          aria-label="Open menu"
-          aria-expanded="false"
+    <header>
+      <div class="nav-wrap">
+        <a href="#" class="logo"
+          >
+          <span>[Your Logo]</span></a
         >
-          ☰
-        </button>
-
-        <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#contact">Contact</a>
+        <nav class="links">
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-right">
+          <div class="nav-phone">
+            <svg><use href="#i-phone" /></svg>+251900000000
+          </div>
+          <a href="booking.html" class="btn btn-gold btn-sm"
+            >Book My Appointment</a
+          >
         </div>
-
-        <a class="nav-cta" href="#appointment">Let's Talk <span>↗</span></a>
-      </nav>
+      </div>
     </header>
 
-    <main id="home">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">MODERN DENTAL CARE</p>
-            <h1>
-              Brighten your<br />smile with <em>expert</em><br />dent<span
-                >al care</span
-              >
-            </h1>
-            <p class="hero-text">
-              Comfortable, personalized dental care designed around you. From
-              routine checkups to complete smile transformations.
-            </p>
-            <a class="button button-dark" href="#appointment"
-              >Schedule your visit <span>→</span></a
+    <!-- HERO -->
+    <section class="hero">
+      <div class="gold-shadow hero-goldshadow shadow"></div>
+      <div class="light-shadow hero-lightshadow shadow"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow dark"
+            ><svg><use href="#i-award" /></svg>The Country's #1 Dental
+            Clinic</span
+          >
+          <h1>
+            Your Healthiest,
+            <span class="gold-text">Most Confident Smile</span> Starts Here
+          </h1>
+          <p class="lead">
+            From routine check-ups to complete smile makeovers, our expert team
+            delivers gentle, world-class dental care in a modern, comfortable
+            clinic — so you can smile without hesitation.
+          </p>
+          <div class="hero-actions">
+            <a href="booking.html" class="btn btn-gold"
+              ><svg><use href="#i-calendar" /></svg>Book My Appointment</a
+            >
+            <a href="tel:+251900000000" class="btn btn-outline-dark"
+              ><svg><use href="#i-phone" /></svg>Call the Clinic</a
             >
           </div>
-
-          <div class="hero-visual">
-            <div class="hero-orbit orbit-one"></div>
-            <div class="hero-orbit orbit-two"></div>
+          <div class="hero-trust">
+            <svg><use href="#i-shield" /></svg>Free consultation &nbsp;·&nbsp;
+            Gentle, pain-free care &nbsp;·&nbsp; Two branches in Addis Ababa
+            &amp; Hawassa
+          </div>
+          <div class="hero-stats">
+            <div class="stat-block">
+              <div class="stars">
+                <svg><use href="#i-star" /></svg
+                ><svg><use href="#i-star" /></svg
+                ><svg><use href="#i-star" /></svg
+                ><svg><use href="#i-star" /></svg
+                ><svg><use href="#i-star" /></svg>
+              </div>
+              <small>4.9/5 from 2,000+ happy patients</small>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block">
+              <span class="num">15+</span><small>Years of Excellence</small>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-block">
+              <span class="num">50k+</span><small>Smiles Transformed</small>
+            </div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="frame">
             <img
-              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=85"
-              alt="Dentist providing comfortable patient care"
+              src="./assets/hero-img.jpg"
+              alt="Happy patient in dental chair"
             />
-            <div class="experience-badge">
-              <strong>15+</strong>
-              <span>Years of<br />experience</span>
+          </div>
+          <span class="badge-pill"
+            ><svg><use href="#i-award" /></svg>Premium Care</span
+          >
+          <div class="float-card">
+            <div class="icon-badge">
+              <svg><use href="#i-smile" /></svg>
+            </div>
+            <div>
+              <strong>Smile Makeovers</strong
+              ><span>Transform your confidence</span>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="container stats-card">
-          <div class="stat">
-            <span class="stat-icon">✦</span>
-            <div>
-              <strong>Caring Dentists</strong
-              ><small>Your health is our priority</small>
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"
+            ><svg><use href="#i-brush" /></svg>Our Services</span
+          >
+          <h2>Complete Dental Care, All Under One Roof</h2>
+          <p>
+            From preventive check-ups to advanced cosmetic and implant
+            dentistry, our specialists care for every smile.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg><use href="#i-brush" /></svg>
             </div>
+            <h3>General Dentistry</h3>
+            <p>
+              Check-ups, cleanings, fillings and preventive care to keep your
+              teeth healthy for life.
+            </p>
+            <a href="#" class="link-arrow"
+              >Get Service <svg><use href="#i-arrow" /></svg
+            ></a>
           </div>
-          <div class="stat">
-            <span class="stat-number">15+</span>
-            <div><strong>Years</strong><small>of experience</small></div>
-          </div>
-          <div class="stat">
-            <span class="stat-number">5,000+</span>
-            <div>
-              <strong>Happy Patients</strong><small>smiles cared for</small>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg><use href="#i-sparkle" /></svg>
             </div>
+            <h3>Cosmetic Dentistry</h3>
+            <p>
+              Veneers, bonding and smile design to give you the bright, flawless
+              smile you deserve.
+            </p>
+            <a href="#" class="link-arrow"
+              >Get Service <svg><use href="#i-arrow" /></svg
+            ></a>
           </div>
-          <div class="stat">
-            <span class="stat-icon">♥</span>
-            <div>
-              <strong>Personalized Care</strong
-              ><small>Made for your smile</small>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg><use href="#i-smile2" /></svg>
             </div>
+            <h3>Teeth Whitening</h3>
+            <p>
+              Professional, safe whitening that lifts years of stains in a
+              single visit.
+            </p>
+            <a href="#" class="link-arrow"
+              >Get Service <svg><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg><use href="#i-scan" /></svg>
+            </div>
+            <h3>Dental Implants</h3>
+            <p>
+              Permanent, natural-looking replacements for missing teeth that
+              restore full function.
+            </p>
+            <a href="#" class="link-arrow"
+              >Get Service <svg><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg><use href="#i-pulse" /></svg>
+            </div>
+            <h3>Root Canal Treatment</h3>
+            <p>
+              Gentle, virtually pain-free root canal therapy that saves your
+              natural tooth.
+            </p>
+            <a href="#" class="link-arrow"
+              >Get Service <svg><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg><use href="#i-smile" /></svg>
+            </div>
+            <h3>Orthodontics</h3>
+            <p>
+              Braces and clear aligners to straighten teeth and perfect your
+              bite at any age.
+            </p>
+            <a href="#" class="link-arrow"
+              >Get Service <svg><use href="#i-arrow" /></svg
+            ></a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="trusted section" id="about">
-        <div class="container split">
-          <div class="section-copy">
-            <p class="eyebrow">A PLACE TO TRUST</p>
-            <h2>Your trusted partners<br />in dental care</h2>
-            <p>
-              At "your company", we believe that healthy smiles are the
-              foundation of confidence. Our dedicated team combines advanced
-              technology with a warm, patient-first approach.
-            </p>
-            <p>
-              Whether you need preventive care, cosmetic dentistry, or
-              restorative treatment, we'll create a plan that fits your goals.
-            </p>
-            <a class="button button-dark" href="#appointment"
-              >Schedule your visit <span>→</span></a
-            >
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-media">
+          <div class="main-img">
+            <img src="./assets/about-img.jpg" />
           </div>
-          <div class="image-frame">
+          <div class="rank-badge">
+            <svg><use href="#i-award" /></svg>
+            <div>
+              <strong>#1</strong><span>Dental Clinic in the Country</span>
+            </div>
+          </div>
+          <div class="inset-img">
             <img
-              src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85"
-              alt="Dentist treating a patient"
+              src="./assets/about-img-2.jpg"
+              alt="Dentist consulting with patient"
             />
-            <div class="round-tag">CARE<br /><strong>+</strong><br />TRUST</div>
+          </div>
+          <div class="years-card">
+            <div class="icon-badge">
+              <svg><use href="#i-smile" /></svg>
+            </div>
+            <div><strong>15+</strong><span>Years of Excellence</span></div>
           </div>
         </div>
-      </section>
-
-      <section class="services section" id="services">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">OUR SERVICES</p>
-              <h2>Complete care for<br />every smile</h2>
-            </div>
-            <p>
-              From prevention to transformation, our essential dental services
-              are designed to keep your smile healthy, confident and
-              comfortable.
-            </p>
+        <div class="about-content">
+          <span class="eyebrow"
+            ><svg><use href="#i-heart" /></svg>About [Your Comapny]</span
+          >
+          <h2>A Legacy of Care, A Future of Confident Smiles</h2>
+          <p>
+            For over 15 years, [Your Company] has been the country's most trusted
+            name in dentistry. Our clinic combines state-of-the-art technology
+            with a warm, patient-first approach — because great dental care
+            should never feel intimidating.
+          </p>
+          <p>
+            From your first check-up to a complete smile transformation, our
+            team of specialists is here to guide you every step of the way with
+            gentle, honest, and world-class treatment.
+          </p>
+          <div class="location-strip">
+            <svg><use href="#i-pin" /></svg>Conveniently located at two branches
+            — Addis Ababa &amp; Hawassa
           </div>
-
-          <div class="service-grid">
-            <article class="service-card featured">
-              <span class="service-icon">✦</span>
-              <h3>General Dentistry</h3>
-              <p>
-                Routine exams, cleanings, fillings and preventive care for
-                long-term oral health.
-              </p>
-              <a href="#appointment">Learn more →</a>
-            </article>
-            <article class="service-card">
-              <span class="service-icon">☼</span>
-              <h3>Cosmetic Dentistry</h3>
-              <p>
-                Whitening, veneers and smile enhancement treatments tailored to
-                your goals.
-              </p>
-              <a href="#appointment">Learn more →</a>
-            </article>
-            <article class="service-card">
-              <span class="service-icon">◇</span>
-              <h3>Restorative Care</h3>
-              <p>
-                Crowns, bridges and restorative solutions that bring strength
-                and function back.
-              </p>
-              <a href="#appointment">Learn more →</a>
-            </article>
-            <article class="service-card">
-              <span class="service-icon">+</span>
-              <h3>Emergency Dental Care</h3>
-              <p>
-                Fast, compassionate attention when unexpected dental problems
-                happen.
-              </p>
-              <a href="#appointment">Learn more →</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="reasons section">
-        <div class="container">
-          <div class="reasons-header">
-            <div>
-              <p class="eyebrow">WHY CHOOSE US</p>
-              <h2>The top reasons our<br />patients love us</h2>
-            </div>
-            <p>
-              We make dental care simple: skilled clinicians, modern technology,
-              transparent communication and an experience designed to feel
-              genuinely comfortable.
-            </p>
-          </div>
-
-          <div class="reason-grid">
-            <div class="reason">
-              <span>01</span>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="icon-badge">
+                <svg><use href="#i-users" /></svg>
+              </div>
               <div>
-                <h3>Experienced team</h3>
-                <p>Skilled dental professionals who put your comfort first.</p>
+                <strong>Expert Specialists</strong
+                ><span>A team of highly trained dentists</span>
               </div>
             </div>
-            <div class="reason">
-              <span>02</span>
+            <div class="feature-item">
+              <div class="icon-badge">
+                <svg><use href="#i-shield" /></svg>
+              </div>
               <div>
-                <h3>Modern technology</h3>
-                <p>Digital tools and efficient techniques for precise care.</p>
+                <strong>Sterile &amp; Safe</strong
+                ><span>Hospital-grade hygiene standards</span>
               </div>
             </div>
-            <div class="reason">
-              <span>03</span>
+            <div class="feature-item">
+              <div class="icon-badge">
+                <svg><use href="#i-sparkle" /></svg>
+              </div>
               <div>
-                <h3>Personalized plans</h3>
-                <p>Treatment recommendations built around your needs.</p>
+                <strong>Modern Technology</strong
+                ><span>Latest digital dentistry tools</span>
               </div>
             </div>
-            <div class="reason">
-              <span>04</span>
+            <div class="feature-item">
+              <div class="icon-badge">
+                <svg><use href="#i-heart" /></svg>
+              </div>
               <div>
-                <h3>Transparent care</h3>
-                <p>Clear explanations, honest pricing and no surprises.</p>
+                <strong>Patient-First</strong
+                ><span>Gentle, caring, judgment-free care</span>
               </div>
             </div>
           </div>
+          <a href="about.html" class="btn btn-gold"
+            >Discover Our Story <svg><use href="#i-arrow" /></svg
+          ></a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= BOOKING ================= -->
-      <section id="book">
-        <div class="booking reveal">
-          <div class="booking-inner">
-            <div>
-              <h2>Ready when you are — most requests get a same-week slot.</h2>
-              <p>
-                Call, email, or send the form below. We'll confirm your
-                appointment within one business day.
-              </p>
-              <a href="#contact" class="btn-primary">Request appointment</a>
-            </div>
-            <table class="hours-table">
-              <tr>
-                <td>Monday – Friday</td>
-                <td>08:00 – 18:00</td>
-              </tr>
-              <tr>
-                <td>Saturday</td>
-                <td>09:00 – 15:00</td>
-              </tr>
-              <tr>
-                <td>Sunday</td>
-                <td>Closed</td>
-              </tr>
-              <tr>
-                <td>Emergency line</td>
-                <td>24 / 7</td>
-              </tr>
-            </table>
-          </div>
+    <section id="how-it-works" class="section how">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">ϟ &nbsp; How It Works</span>
+          <h2>Getting Started Is Simple</h2>
+          <p>
+            From your first reach-out to your final follow-up, we've made
+            exceptional dental care effortless with a clear, stress-free
+            process.
+          </p>
         </div>
-      </section>
-
-      <section id="team">
-        <div class="container">
-          <div class="section-heading centered">
-            <span class="eyebrow">Meet the team</span>
-            <h2>The people behind your care.</h2>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-icon">⌕</div>
+            <h3>Book Your Visit</h3>
             <p>
-              A small, steady team of dentists and hygienists who know your
-              history and treat you like a returning patient, not a chart
-              number.
+              Request an appointment online, by phone, or in person — choose the
+              branch that suits you best.
             </p>
-          </div>
-          <div class="team-grid">
-            <div class="team-card reveal">
-              <div class="team-photo">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--blue)"
-                  stroke-width="1.3"
-                >
-                  <circle cx="12" cy="9" r="4" />
-                  <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
-                </svg>
-              </div>
-              <h4>Dr. Hana Girma</h4>
-              <div class="role">Lead Dentist, General &amp; Cosmetic</div>
-            </div>
-            <div class="team-card reveal">
-              <div class="team-photo">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--blue)"
-                  stroke-width="1.3"
-                >
-                  <circle cx="12" cy="9" r="4" />
-                  <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
-                </svg>
-              </div>
-              <h4>Dr. Samuel Bekele</h4>
-              <div class="role">Endodontics &amp; Root Canal</div>
-            </div>
-            <div class="team-card reveal">
-              <div class="team-photo">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--blue)"
-                  stroke-width="1.3"
-                >
-                  <circle cx="12" cy="9" r="4" />
-                  <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
-                </svg>
-              </div>
-              <h4>Dr. Liya Tesfaye</h4>
-              <div class="role">Pediatric Dentistry</div>
-            </div>
-            <div class="team-card reveal">
-              <div class="team-photo">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--blue)"
-                  stroke-width="1.3"
-                >
-                  <circle cx="12" cy="9" r="4" />
-                  <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
-                </svg>
-              </div>
-              <h4>Naomi Alemu</h4>
-              <div class="role">Lead Dental Hygienist</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="reviews section" id="reviews">
-        <div class="container">
-          <div class="section-heading centered">
-            <p class="eyebrow">PATIENT STORIES</p>
-            <h2>Real people. Real smiles.</h2>
-            <p>What our patients say after experiencing "your company".</p>
-          </div>
-
-          <div class="review-grid">
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <p>
-                “The whole team made me feel comfortable from the moment I
-                walked in. The care was professional and genuinely warm.”
-              </p>
-              <strong>Sarah M.</strong><small>Patient since 2022</small>
-            </article>
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <p>
-                “I finally feel confident smiling again. Everything was
-                explained clearly and the result exceeded my expectations.”
-              </p>
-              <strong>Daniel K.</strong><small>Cosmetic patient</small>
-            </article>
-            <article class="review-card">
-              <div class="stars">★★★★★</div>
-              <p>
-                “Clean clinic, friendly staff and excellent service. Booking was
-                easy and the appointment started right on time.”
-              </p>
-              <strong>Maria T.</strong><small>Patient since 2024</small>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="appointment section" id="appointment">
-        <div class="container appointment-box">
-          <div>
-            <p class="eyebrow">READY FOR A BRIGHTER SMILE?</p>
-            <h2>Your smile deserves<br /><em>expert care.</em></h2>
+          </article>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-icon">♧</div>
+            <h3>Get Examined</h3>
             <p>
-              Book an appointment and let our team build a comfortable care plan
-              around you.
+              Our specialists assess your smile, listen to your goals, and
+              explain every option clearly.
             </p>
-          </div>
-          <form id="appointmentForm" class="appointment-form">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email address"
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone number"
-              required
-            />
-            <select name="service" required>
-              <option value="">Choose a service</option>
-              <option>General Dentistry</option>
-              <option>Cosmetic Dentistry</option>
-              <option>Restorative Care</option>
-              <option>Emergency Care</option>
-            </select>
-            <button class="button button-light" type="submit">
-              Request appointment <span>→</span>
-            </button>
-            <p class="form-message" aria-live="polite"></p>
-          </form>
-        </div>
-      </section>
-
-      <!-- ================= CONTACT ================= -->
-      <section id="contact">
-        <div class="container">
-          <div class="section-heading centered reveal">
-            <span class="eyebrow">Get in touch</span>
-            <h2>Request an appointment.</h2>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-icon">✧</div>
+            <h3>Receive Treatment</h3>
             <p>
-              Fill in your details and preferred time — our front desk will
-              confirm by phone or email.
+              Enjoy gentle, world-class care using the latest technology,
+              tailored precisely to you.
             </p>
-          </div>
+          </article>
+          <article class="step-card">
+            <span class="step-number">04</span>
+            <div class="step-icon">☺</div>
+            <h3>Smile With Confidence</h3>
+            <p>
+              We follow up to keep your smile healthy for life — with simple
+              aftercare and regular check-ups.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <div class="contact-grid">
-            <form
-              class="reveal"
-              onsubmit="
-                event.preventDefault();
-                this.querySelector('.form-success').style.display = 'block';
-                this.reset();
-              "
-            >
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="fname">Full name</label>
-                  <input
-                    id="fname"
-                    type="text"
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
-                <div class="form-field">
-                  <label for="fphone">Phone</label>
-                  <input
-                    id="fphone"
-                    type="tel"
-                    placeholder="+251 ..."
-                    required
-                  />
+    <!-- RESULTS -->
+    <section class="results" id="results">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"
+            ><svg><use href="#i-sparkle" /></svg>Real Results</span
+          >
+          <h2>Smiles Transformed, Confidence Restored</h2>
+          <p>
+            See the difference our expert care makes. Explore real patient
+            transformations across whitening, veneers, implants and more.
+          </p>
+        </div>
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="ba-imgs">
+              <div class="ba">
+                <span class="ba-tag before">Before</span
+                ><img src="./assets/before3.png" alt="Before teeth whitening" />
+              </div>
+              <div class="ba">
+                <span class="ba-tag after">After</span
+                ><img src="./assets/after3.png" alt="After teeth whitening" />
+              </div>
+            </div>
+            <div class="result-body">
+              <div class="result-top">
+                <h3>Teeth Whitening</h3>
+                <div class="stars">
+                  <svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg>
                 </div>
               </div>
-              <div class="form-field">
-                <label for="femail">Email</label>
-                <input
-                  id="femail"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                />
+              <p>A brighter, more radiant smile in a single visit.</p>
+              <a href="#" class="link-arrow"
+                >See more results <svg><use href="#i-arrow" /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="ba-imgs">
+              <div class="ba">
+                <span class="ba-tag before">Before</span
+                ><img src="./assets/before2.png" alt="Before dental implant" />
               </div>
-              <div class="form-field">
-                <label for="fservice">Service</label>
-                <select id="fservice">
-                  <option>Checkup &amp; Cleaning</option>
-                  <option>Fillings &amp; Cavity Care</option>
-                  <option>Root Canal Therapy</option>
-                  <option>Extraction</option>
+              <div class="ba">
+                <span class="ba-tag after">After</span
+                ><img src="./assets/after2.png" alt="After dental implant" />
+              </div>
+            </div>
+            <div class="result-body">
+              <div class="result-top">
+                <h3>Dental Implants</h3>
+                <div class="stars">
+                  <svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg>
+                </div>
+              </div>
+              <p>Natural-looking, permanent tooth replacement.</p>
+              <a href="#" class="link-arrow"
+                >See more results <svg><use href="#i-arrow" /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="ba-imgs">
+              <div class="ba">
+                <span class="ba-tag before">Before</span
+                ><img src="./assets/before1.png" alt="Before smile makeover" />
+              </div>
+              <div class="ba">
+                <span class="ba-tag after">After</span
+                ><img src="./assets/after1.png" alt="After smile makeover" />
+              </div>
+            </div>
+            <div class="result-body">
+              <div class="result-top">
+                <h3>Smile Makeovers</h3>
+                <div class="stars">
+                  <svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg
+                  ><svg><use href="#i-star" /></svg>
+                </div>
+              </div>
+              <p>Complete transformations designed around you.</p>
+              <a href="#" class="link-arrow"
+                >See more results <svg><use href="#i-arrow" /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section team">
+      <div class="container team-grid">
+        <div class="team-visual">
+          <img
+            src="assets/team image.jfif"
+            alt="[Your Company] dental specialists"
+          />
+          <div class="specialists-card">
+            <div class="round-icon">♧</div>
+            <div>
+              <strong>20+ Specialists</strong><small>Across two branches</small>
+            </div>
+            <div class="doctor-dots">
+              <span><img src="./assets/gril-doctor-1.webp" width="30px"></span><span><img src="./assets/men-doctor-1.webp" width="30px"></span><span><img src="./assets/girl-doctor-2.webp" width="30px"></span>
+            </div>
+          </div>
+        </div>
+        <div class="team-copy">
+          <span class="eyebrow">♧ &nbsp; Meet Our Team</span>
+          <h2>The Smiles Behind the Smiles</h2>
+          <p>
+            Behind every confident smile is a team of dedicated specialists who
+            make it happen. Our dentists, hygienists, and support staff work
+            together to give you the gentle, world-class care [Your Company] is
+            known for.
+          </p>
+          <div class="team-features">
+            <div>
+              <span>♙</span>
+              <div>
+                <strong>Highly Trained</strong
+                ><small
+                  >Specialists across general, cosmetic, implant &amp;
+                  orthodontic care</small
+                >
+              </div>
+            </div>
+            <div>
+              <span>♡</span>
+              <div>
+                <strong>Patient-First</strong
+                ><small
+                  >Warm, judgment-free care that puts your comfort above
+                  all</small
+                >
+              </div>
+            </div>
+            <div>
+              <span>♢</span>
+              <div>
+                <strong>Sterile &amp; Safe</strong
+                ><small
+                  >Hospital-grade hygiene and modern equipment in every
+                  room</small
+                >
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-gold" href="#contact">Meet Us in Person &nbsp; →</a>
+        </div>
+      </div>
+    </section>
+    <!-- BOOKING -->
+    <section class="booking" id="booking">
+      <div class="container booking-grid">
+        <div class="booking-copy">
+          <span class="eyebrow dark"
+            ><svg><use href="#i-calendar" /></svg>Book Your Visit</span
+          >
+          <h2>Ready for a Healthier, Brighter Smile?</h2>
+          <p>
+            Request your appointment today and our friendly team will confirm
+            your visit within 24 hours. Your comfort and care are our top
+            priority.
+          </p>
+          <div class="booking-info">
+            <div class="info-row">
+              <div class="icon-badge">
+                <svg><use href="#i-clock" /></svg>
+              </div>
+              <span>Open 7 days a week, 9am – 9pm</span>
+            </div>
+            <div class="info-row">
+              <div class="icon-badge">
+                <svg><use href="#i-phone" /></svg>
+              </div>
+              <span>Call us: +251900000000</span>
+            </div>
+            <div class="info-row">
+              <div class="icon-badge">
+                <svg><use href="#i-map" /></svg>
+              </div>
+              <span>Conveniently located in the heart of the city</span>
+            </div>
+          </div>
+        </div>
+        <div class="booking-card">
+          <h3>Request an Appointment</h3>
+          <p>Fill in your details and we'll get back to you shortly.</p>
+          <form onsubmit="return false;">
+            <div class="form-row">
+              <div class="field">
+                <label>Full Name</label
+                ><input type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label>Phone</label
+                ><input type="tel" placeholder="Your phone number" />
+              </div>
+            </div>
+            <div class="field">
+              <label>Email</label
+              ><input type="email" placeholder="you@example.com" />
+            </div>
+            <div class="field">
+              <label>Preferred Branch</label>
+              <select>
+                <option>Select a branch</option>
+                <option>Addis Ababa — Bole Road</option>
+                <option>Hawassa — Main Street</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Preferred Date</label><input type="date" />
+              </div>
+              <div class="field">
+                <label>Service</label>
+                <select>
+                  <option>General Check-up</option>
+                  <option>Cosmetic Dentistry</option>
                   <option>Teeth Whitening</option>
-                  <option>Pediatric Dentistry</option>
-                  <option>Not sure yet</option>
+                  <option>Dental Implants</option>
+                  <option>Root Canal Treatment</option>
+                  <option>Orthodontics</option>
                 </select>
               </div>
-              <div class="form-field">
-                <label for="fnote">Anything we should know?</label>
-                <textarea
-                  id="fnote"
-                  rows="3"
-                  placeholder="Preferred day/time, symptoms, etc."
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                class="button button-dark"
-                style="border: none"
-              >
-                Send request
-              </button>
-              <p
-                class="form-success"
-                style="
-                  display: none;
-                  margin-top: 14px;
-                  color: var(--teal);
-                  font-size: 0.88rem;
-                  font-weight: 600;
-                "
-              >
-                Thanks — we'll be in touch shortly to confirm.
-              </p>
-            </form>
+            </div>
+            <div class="field">
+              <label>Message (optional)</label
+              ><textarea placeholder="Tell us about your needs"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold btn-block">
+              Request My Appointment
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-            <div class="reveal">
-              <div class="contact-info-card">
-                <div class="info-row">
-                  <div class="info-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h5>Phone</h5>
-                    <p>+251 11 234 5678</p>
-                  </div>
-                </div>
-                <div class="info-row">
-                  <div class="info-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M4 4h16v16H4z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                      />
-                      <path
-                        d="M4 6l8 7 8-7"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h5>Email</h5>
-                    <p>hello@eglomsdental.example</p>
-                  </div>
-                </div>
-                <div class="info-row">
-                  <div class="info-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                      />
-                      <circle
-                        cx="12"
-                        cy="10"
-                        r="2.4"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h5>Address</h5>
-                    <p>Placeholder St. 24, near City Square</p>
-                  </div>
-                </div>
-                <div class="map-placeholder">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126707.226307156!2d38.40783256537225!3d7.05610124931493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b14573a067b82b%3A0xa82c1a9985db8f16!2sHawassa%2C%20Ethiopia!5e0!3m2!1sen!2sfr!4v1787487126243!5m2!1sen!2sfr"
-                    width="100%"
-                    height="450"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                  ></iframe>
-                </div>
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"
+            ><svg><use href="#i-help" /></svg>FAQ</span
+          >
+          <h2>Frequently Asked Questions</h2>
+          <p>
+            Everything you need to know before your visit. Can't find an answer?
+            Get in touch and we'll be happy to help.
+          </p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item open">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h4>How often should I visit the dentist?</h4>
+              <div class="faq-toggle">
+                <svg><use href="#i-chevron" /></svg>
+              </div>
+            </div>
+            <div class="faq-a">
+              <p>
+                We recommend a check-up and professional cleaning every six
+                months. Regular visits help us catch small issues early, keeping
+                your teeth and gums healthy and preventing costly treatments
+                down the line.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h4>Is the dental treatment painful?</h4>
+              <div class="faq-toggle">
+                <svg><use href="#i-chevron" /></svg>
+              </div>
+            </div>
+            <div class="faq-a">
+              <p>
+                Not at all — we use modern, gentle techniques and anesthesia
+                where needed, so most treatments are virtually pain-free. We
+                always check in with you throughout to keep you comfortable.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h4>Do you accept dental insurance?</h4>
+              <div class="faq-toggle">
+                <svg><use href="#i-chevron" /></svg>
+              </div>
+            </div>
+            <div class="faq-a">
+              <p>
+                Yes, we work with most major insurance providers. Bring your
+                policy details to your first visit and our front desk team will
+                help verify your coverage.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h4>How can I book an appointment?</h4>
+              <div class="faq-toggle">
+                <svg><use href="#i-chevron" /></svg>
+              </div>
+            </div>
+            <div class="faq-a">
+              <p>
+                You can book online through our appointment form above, call
+                either branch directly, or send us a message — our team confirms
+                every request within 24 hours.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h4>What should I do in a dental emergency?</h4>
+              <div class="faq-toggle">
+                <svg><use href="#i-chevron" /></svg>
+              </div>
+            </div>
+            <div class="faq-a">
+              <p>
+                Call either branch right away — we hold same-day emergency slots
+                for urgent issues like severe pain, swelling, or a knocked-out
+                tooth.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <h4>Is teeth whitening safe?</h4>
+              <div class="faq-toggle">
+                <svg><use href="#i-chevron" /></svg>
+              </div>
+            </div>
+            <div class="faq-a">
+              <p>
+                Yes, professional in-clinic whitening is safe and closely
+                monitored by our specialists, unlike over-the-counter kits which
+                can be harsher on enamel and gums.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-more">
+          <a href="#" class="link-arrow" style="font-size: 16px"
+            >View all questions <svg><use href="#i-arrow" /></svg
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="ceo-message" class="section ceo">
+      <div class="shadow gold-shadow hero-goldshadow"></div>
+      <div class="shadow light-shadow hero-lightshadow"></div>
+      <div class="container ceo-container">
+        <div class="ceo-head">
+          <div class="eyebrow ceo-pill">❞ &nbsp; A Message From Our CEO</div>
+          <h2>"Your Smile Is Our Mission"</h2>
+        </div>
+        <div class="ceo-card">
+          <div class="quote-mark">”</div>
+          <p>
+            "For over fifteen years, my goal has never changed: to bring the
+            finest dental care to every family in this country — with dignity,
+            comfort, and honesty. At [Your Company], we don't just treat teeth; we
+            restore confidence and change lives. Every patient who walks through
+            our doors becomes part of our family, and we treat you exactly as we
+            would treat our own. Thank you for trusting us with your smile."
+          </p>
+          <div class="ceo-divider"></div>
+          <div class="ceo-profile">
+            <img src="assets/men-doctor-1.webp" alt="CEO portrait" />
+            <div>
+              <strong>Dr. [Your Name]</strong
+              ><small>Founder &amp; Chief Executive Officer, [Your Company]</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"
+            ><svg><use href="#i-quote" /></svg>Testimonials</span
+          >
+          <h2>Trusted by Thousands of Happy Patients</h2>
+          <p>
+            Our patients' trust is our greatest achievement. Discover why
+            [Your Company] is the country's number one dental clinic.
+          </p>
+        </div>
+        
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="stars">
+              <svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
+              ><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
+              ><svg><use href="#i-star" /></svg>
+            </div>
+            <blockquote>
+              "I was terrified of the dentist for years, but the team at
+              [Your Company] completely changed that. Gentle, caring, and so
+              professional — I actually look forward to my visits now."
+            </blockquote>
+            <div class="reviewer">
+              <div class="avatar">PN</div>
+              <div>
+                <strong>Patient Name</strong><span>General Check-up</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">
+              <svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
+              ><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
+              ><svg><use href="#i-star" /></svg>
+            </div>
+            <blockquote>
+              "My smile makeover exceeded every expectation. The results are
+              stunning and natural, and the whole process was smooth and
+              comfortable from start to finish."
+            </blockquote>
+            <div class="reviewer">
+              <div class="avatar">PN</div>
+              <div>
+                <strong>Patient Name</strong><span>Smile Makeover</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">
+              <svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
+              ><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
+              ><svg><use href="#i-star" /></svg>
+            </div>
+            <blockquote>
+              "I had my dental implant done here and it was virtually painless.
+              The clinic is spotless, the technology is modern, and the care is
+              truly world-class."
+            </blockquote>
+            <div class="reviewer">
+              <div class="avatar">PN</div>
+              <div>
+                <strong>Patient Name</strong><span>Dental Implant</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+        <p class="testimonial-note">
+          Sample testimonials shown as placeholders — replace with your real
+          patient reviews.
+        </p>
+      </div>
+    </section>
 
-      <!-- ================= FOOTER ================= -->
-      <footer>
-        <div class="container">
-          <div class="footer-grid">
-            <div>
-              <a class="brand" href="#home">
-                <span class="brand-mark">✦</span>
-                <span>"your<span>logo</span>"</span>
-              </a>
-              <p
-                style="
-                  color: var(--ink-soft);
-                  font-size: 0.9rem;
-                  max-width: 280px;
-                "
-              >
-                Everyday dental care, explained clearly and delivered gently.
-                New patients always welcome.
-              </p>
-            </div>
-            <div>
-              <h5>Explore</h5>
-              <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#why">Why Us</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5>Services</h5>
-              <ul>
-                <li><a href="#services">Checkups &amp; Cleanings</a></li>
-                <li><a href="#services">Fillings</a></li>
-                <li><a href="#services">Root Canal</a></li>
-                <li><a href="#services">Whitening</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5>Contact</h5>
-              <ul>
-                <li><a href="tel:+251112345678">+251 11 234 5678</a></li>
-                <li>
-                  <a href="mailto:hello@eglomsdental.example"
-                    >hello@eglomsdental.example</a
-                  >
-                </li>
-                <li><a href="#book">Book appointment</a></li>
-              </ul>
-            </div>
+    <!-- GALLERY (designed to match, no source image was provided) -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"
+            ><svg><use href="#i-scan" /></svg>Gallery</span
+          >
+          <h2>A Look Inside Our Clinic</h2>
+          <p>
+            Take a tour of our modern treatment rooms, friendly team, and the
+            calm space we've built around your comfort.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item big">
+            <img src="./assets/about-img.jpg" alt="Treatment room" /><span
+              class="tag"
+              >Treatment Room</span
+            >
           </div>
-          <div class="footer-bottom">
-            <span>© 2026 Egloms Dental. All rights reserved.</span>
-            <span
-              >Placeholder content — replace with your clinic's details.</span
+          <div class="gallery-item">
+            <img src="./assets/gallery-img2.webp" alt="Dental tools" /><span
+              class="tag"
+              >Modern Tools</span
+            >
+          </div>
+          <div class="gallery-item">
+            <img
+              src="./assets/reception.jfif"
+              alt="Reception area"
+            /><span class="tag">Reception</span>
+          </div>
+          <div class="gallery-item">
+            <img src="./assets/team image.jfif" alt="Dentist at work" /><span class="tag"
+              >Our Team</span
+            >
+          </div>
+          <div class="gallery-item">
+            <img src="./assets/gallery-3.avif" alt="Patient smiling" /><span
+              class="tag"
+              >Happy Patients</span
+            >
+          </div>
+          <div class="gallery-item">
+            <img src="./assets/happy client.jfif" alt="Clinic hallway" /><span
+              class="tag"
+              >Our Clinic</span
             >
           </div>
         </div>
-      </footer>
-    </main>
-    <script src="script.js"></script>
+        <div class="gallery-cta">
+          <a
+            href="#"
+            class="btn btn-outline-dark"
+            style="color: var(--ink); border-color: var(--line)"
+            >View Full Gallery <svg><use href="#i-arrow" /></svg
+          ></a>
+        </div>
+      </div>
+    </section>
+    <!-- VISIT US -->
+    <section class="visit" id="visit">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"
+            ><svg><use href="#i-map" /></svg>Visit Us</span
+          >
+          <h2>Two Branches, Ready to Welcome You</h2>
+          <p>
+            Visit us in Addis Ababa or Hawassa. Reach out, drop by, or find your
+            nearest branch on the maps below.
+          </p>
+        </div>
+        <div class="visit-grid">
+          <div class="visit-info">
+            <div class="visit-row">
+              <div class="icon-badge">
+                <svg><use href="#i-pin" /></svg>
+              </div>
+              <div>
+                <strong>Our Branches</strong>
+                <p>
+                  Addis Ababa — Bole Road, Addis Ababa<br />Hawassa — Main
+                  Street, Hawassa
+                </p>
+              </div>
+            </div>
+            <div class="visit-row">
+              <div class="icon-badge">
+                <svg><use href="#i-phone" /></svg>
+              </div>
+              <div>
+                <strong>Call Us</strong>
+                <p>+251900000000<br />+20 123 456 7891</p>
+              </div>
+            </div>
+            <div class="visit-row">
+              <div class="icon-badge">
+                <svg><use href="#i-mail" /></svg>
+              </div>
+              <div>
+                <strong>Email Us</strong>
+                <p>hello@[Your Company].com<br />appointments@[Your Company].com</p>
+              </div>
+            </div>
+            <div class="visit-row">
+              <div class="icon-badge">
+                <svg><use href="#i-clock" /></svg>
+              </div>
+              <div>
+                <strong>Opening Hours</strong>
+                <p>Mon – Sat: 9:00am – 9:00pm<br />Sunday: 10:00am – 6:00pm</p>
+              </div>
+            </div>
+            <a
+              href="contact.html"
+              class="btn btn-gold"
+              style="align-self: flex-start"
+              >Contact Us <svg><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <div class="maps-col">
+            <div class="map-card">
+              <div class="map-head">
+                <h4>Addis Ababa Branch</h4>
+                <span class="map-tag">Bole Road</span>
+              </div>
+              <div class="map-frame">
+                <iframe
+                  src="https://www.google.com/maps?q=Bole+Road,+Addis+Ababa,+Ethiopia&output=embed"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="shadow gold-shadow final-goldshadow"></div>
+      <div class="shadow light-shadow final-lightshadow"></div>
+      <div class="container">
+        <span class="eyebrow"
+          ><svg><use href="#i-smile" /></svg>Premium Dental Care</span
+        >
+        <h2>Experience the #1 Dental Care in the Country</h2>
+        <p>
+          Don't wait — your healthiest, most confident smile is one appointment
+          away. Our expert team is ready to give you the gentle, world-class
+          care you deserve.
+        </p>
+        <div class="hero-actions">
+          <a href="booking.html" class="btn btn-gold"
+            ><svg><use href="#i-calendar" /></svg>Book My Appointment</a
+          >
+          <a href="tel:+251900000000" class="btn btn-outline-dark"
+            ><svg><use href="#i-phone" /></svg>Call the Clinic</a
+          >
+        </div>
+        <div class="hero-trust">
+          Free consultation &nbsp;·&nbsp; Response within 24 hours &nbsp;·&nbsp;
+          Trusted by 50,000+ patients
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo footer-logo"
+              >
+              <span>[Your Company] <strong> Dental</strong></span></a
+            >
+            <p>
+              The country's number one dental clinic, delivering gentle,
+              world-class care and confident smiles for over 15 years.
+            </p>
+            <div class="social-row">
+              <a href="#" aria-label="Facebook"
+                ><svg><use href="#i-fb" /></svg
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><svg><use href="#i-ig" /></svg
+              ></a>
+              <a href="#" aria-label="X"
+                ><svg><use href="#i-x" /></svg
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><svg><use href="#i-yt" /></svg
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h5>Quick Links</h5>
+            <div class="footer-links">
+              <a href="index.html"
+                ><svg><use href="#i-arrow" /></svg>Home</a
+              >
+              <a href="about.html"
+                ><svg><use href="#i-arrow" /></svg>About Us</a
+              >
+              <a href="services.html"
+                ><svg><use href="#i-arrow" /></svg>Services</a
+              >
+              <a href="booking.html"
+                ><svg><use href="#i-arrow" /></svg>Book Appointment</a
+              >
+              <a href="contact.html"
+                ><svg><use href="#i-arrow" /></svg>Contact</a
+              >
+            </div>
+          </div>
+          <div>
+            <h5>Our Services</h5>
+            <div class="footer-links">
+              <a href="#services"
+                ><svg><use href="#i-arrow" /></svg>General Dentistry</a
+              >
+              <a href="#services"
+                ><svg><use href="#i-arrow" /></svg>Cosmetic Dentistry</a
+              >
+              <a href="#services"
+                ><svg><use href="#i-arrow" /></svg>Teeth Whitening</a
+              >
+              <a href="#services"
+                ><svg><use href="#i-arrow" /></svg>Dental Implants</a
+              >
+              <a href="#services"
+                ><svg><use href="#i-arrow" /></svg>Root Canal Treatment</a
+              >
+              <a href="#services"
+                ><svg><use href="#i-arrow" /></svg>Orthodontics</a
+              >
+            </div>
+          </div>
+          <div>
+            <h5>Get in Touch</h5>
+            <div class="footer-contact-row">
+              <svg><use href="#i-pin" /></svg
+              ><span>Addis Ababa — Bole Road<br />Hawassa — Main Street</span>
+            </div>
+            <div class="footer-contact-row">
+              <svg><use href="#i-phone" /></svg><span>+251900000000</span>
+            </div>
+            <div class="footer-contact-row">
+              <svg><use href="#i-mail" /></svg
+              ><span>hello@[Your Company].com</span>
+            </div>
+            <div class="footer-contact-row">
+              <svg><use href="#i-clock" /></svg
+              ><span>Mon – Sat: 9am – 9pm<br />Sunday: 10am – 6pm</span>
+            </div>
+            <a
+              href="booking.html"
+              class="btn btn-gold btn-sm"
+              style="margin-top: 6px"
+              >Book My Appointment</a
+            >
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 [Your Company] Dental Clinic. All rights reserved.</span>
+          <span>Privacy Policy &nbsp;·&nbsp; Terms of Service</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleFaq(headEl) {
+        const item = headEl.parentElement;
+        const wasOpen = item.classList.contains("open");
+        document
+          .querySelectorAll(".faq-item.open")
+          .forEach((el) => el.classList.remove("open"));
+        if (!wasOpen) item.classList.add("open");
+      }
+    </script>
   </body>
 </html>
