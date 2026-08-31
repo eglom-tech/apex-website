@@ -1,26 +1,27 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-menuToggle?.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", open);
+const header = document.querySelector(`header`);
+const menuBtn = document.querySelector(`.menu-btn`);
+menuBtn.addEventListener(`click`, () => {
+  header.classList.toggle(`open-header`);
 });
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle?.setAttribute("aria-expanded", "false");
-  });
-});
-
-const form = document.getElementById("appointmentForm");
-const message = document.querySelector(".form-message");
-
-form?.addEventListener("submit", event => {
-  event.preventDefault();
-  const data = new FormData(form);
-  const name = data.get("name");
-
-  message.textContent = `Thanks, ${name}! Your appointment request has been received.`;
-  form.reset();
-});
+const revealEls = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target);
+      }
+    });
+  },
+  { threshold: 0.12 },
+);
+revealEls.forEach((el) => io.observe(el));
+function toggleFaq(headEl) {
+  const item = headEl.parentElement;
+  const wasOpen = item.classList.contains("open");
+  document
+    .querySelectorAll(".faq-item.open")
+    .forEach((el) => el.classList.remove("open"));
+  if (!wasOpen) item.classList.add("open");
+}

@@ -3,1644 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Your Company] Dental Clinic</title>
+    <title>AB-elshaday Dental Clinic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css">
-    <style>
-      :root {
-        --navy: #111b31;
-        --navy-2: #132540;
-        --navy-3: #0a1420;
-        --gold: #eeab35;
-        --gold-dark: #d6931f;
-        --blue: #1c7fbe;
-        --teal: #22c1d6;
-        --cream: #fbf0dc;
-        --cream-2: #faf4e9;
-        --ink: #16202e;
-        --gray: #5b6472;
-        --gray-light: #8892a0;
-        --line: #e7e9ee;
-        --bg-soft: #f5f6f8;
-        --white: #ffffff;
-        --radius-lg: 24px;
-        --radius-md: 16px;
-        --radius-sm: 12px;
-        --shadow: 0 10px 30px rgba(14, 27, 44, 0.08);
-        --shadow-lg: 0 20px 50px rgba(14, 27, 44, 0.16);
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-        color: var(--ink);
-        background: var(--white);
-        -webkit-font-smoothing: antialiased;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      .display {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-weight: 800;
-        color: var(--ink);
-        letter-spacing: -0.02em;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      ul {
-        list-style: none;
-      }
-      button {
-        font-family: inherit;
-        cursor: pointer;
-        border: none;
-        background: none;
-      }
-      .container {
-        width: 90%;
-        max-width: 1440px;
-        margin: 0 auto;
-      }
-      section {
-        position: relative;
-      }
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--cream);
-        color: var(--gold-dark);
-        font-weight: 700;
-        font-size: 14px;
-        padding: 9px 20px;
-        border-radius: 999px;
-        margin-bottom: 22px;
-      }
-      .eyebrow.dark {
-        background: rgba(255, 255, 255, 0.08);
-        color: #fff;
-      }
-      .eyebrow svg {
-        width: 16px;
-        height: 16px;
-        flex-shrink: 0;
-      }
-      .section-head {
-        text-align: center;
-        max-width: 720px;
-        margin: 0 auto 56px;
-      }
-      .section-head h2 {
-        font-size: 44px;
-        line-height: 1.15;
-        margin-bottom: 20px;
-      }
-      .section-head p {
-        color: var(--gray);
-        font-size: 18px;
-        line-height: 1.6;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        font-weight: 700;
-        font-size: 16px;
-        padding: 16px 30px;
-        border-radius: 999px;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease,
-          background 0.2s ease;
-        white-space: nowrap;
-      }
-      .btn svg {
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-      }
-      .btn-gold {
-        background: linear-gradient(180deg, #f2b545, var(--gold));
-        color: #231600;
-        box-shadow: 0 12px 28px rgba(238, 171, 53, 0.35);
-      }
-      .btn-gold:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 16px 34px rgba(238, 171, 53, 0.45);
-      }
-      .btn-outline-dark {
-        background: transparent;
-        border: 1.5px solid rgba(255, 255, 255, 0.35);
-        color: #fff;
-      }
-      .btn-outline-dark:hover {
-        background: rgba(255, 255, 255, 0.08);
-      }
-      .btn-block {
-        width: 100%;
-      }
-      .shadow{
-        position: absolute;
-        width: 400px;
-        height: 400px;
-      }
-
-      .gold-shadow{
-        background: radial-gradient(circle at 0% 100%,#e2a41569,transparent 70%);
-         bottom: 0;
-        left: 0;
-      }
-      .light-shadow{
-        background: radial-gradient(circle at 100% 0%,#dbe1ea36,transparent 70%);
-        top: 0;
-        right: 0;
-      }
-
-      .final-goldshadow{
-        background: radial-gradient(circle at 0% 0%,#e2a41569,transparent 70%);
-        bottom: unset;
-        top: 0;
-      }
-      .final-lightshadow{
-        background: radial-gradient(circle at 100% 100%,#dbe1ea36,transparent 70%);
-        top: unset;
-        bottom: 0;
-      }
-      
-      /* HEADER */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--line);
-      }
-      .nav-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 18px 32px;
-        max-width: 1440px;
-        margin: 0 auto;
-      }
-     
-      nav.links {
-        display: flex;
-        gap: 38px;
-      }
-      nav.links a {
-        font-weight: 500;
-        font-size: 15.5px;
-        color: #374151;
-        transition: color 0.2s;
-      }
-      nav.links a:hover {
-        color: var(--blue);
-      }
-      .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 26px;
-      }
-      .nav-phone {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: 600;
-        font-size: 15px;
-        color: var(--ink);
-      }
-      .nav-phone svg {
-        width: 18px;
-        height: 18px;
-        color: var(--gold-dark);
-      }
-      .btn-sm {
-        padding: 12px 24px;
-        font-size: 15px;
-      }
-      .burger {
-        display: none;
-        background: none;
-        border: none;
-      }
-
-      /* HERO */
-      .hero {
-        background:
-          
-          linear-gradient(
-            160deg,
-            var(--navy) 0%,
-            var(--navy-2) 55%,
-            #0c1928 100%
-          );
-        color: #fff;
-        padding: 90px 0 70px;
-        overflow: hidden;
-      }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 64px;
-        align-items: center;
-      }
-      .hero h1 {
-        font-weight: 800;
-        font-size: 58px;
-        line-height: 1.08;
-        margin-bottom: 26px;
-        color: #fff;
-      }
-      .hero h1 .gold-text {
-        background: linear-gradient(90deg, #ffd479, var(--gold));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .hero p.lead {
-        font-size: 18px;
-        line-height: 1.65;
-        color: #b7c1d1;
-        max-width: 520px;
-        margin-bottom: 34px;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        margin-bottom: 22px;
-      }
-      .hero-trust {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #9aa5b5;
-        font-size: 14.5px;
-        margin-bottom: 44px;
-      }
-      .hero-trust svg {
-        width: 16px;
-        height: 16px;
-        color: var(--gold);
-        flex-shrink: 0;
-      }
-      .hero-stats {
-        display: flex;
-        gap: 36px;
-        flex-wrap: wrap;
-      }
-      .hero-stats .stat-block {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .stars {
-        display: flex;
-        gap: 3px;
-        color: var(--gold);
-      }
-      .stars svg {
-        width: 16px;
-        height: 16px;
-      }
-      .hero-stats small {
-        color: #9aa5b5;
-        font-size: 13.5px;
-      }
-      .hero-stats .num {
-        font-size: 26px;
-        font-weight: 800;
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-      .stat-divider {
-        width: 1px;
-        background: rgba(255, 255, 255, 0.15);
-      }
-
-      .hero-media {
-        position: relative;
-      }
-      .hero-media .frame {
-        position: relative;
-        border-radius: 28px;
-        overflow: hidden;
-        box-shadow: var(--shadow-lg);
-        aspect-ratio: 4/4.6;
-        width: 100%;
-        max-height: 520px;
-      }
-      .hero-media .frame::after{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at 100% 100%, #e2a4158a, #e2a41541,#e2a41588);
-      }
-      .hero-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .float-card {
-        position: absolute;
-        left: -24px;
-        bottom: -15px;
-        background: #fff;
-        color: var(--ink);
-        border-radius: 18px;
-        padding: 16px 20px;
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        box-shadow: var(--shadow-lg);
-        max-width: 270px;
-      }
-      .float-card .icon-badge {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        background: var(--cream);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--gold-dark);
-        flex-shrink: 0;
-      }
-      .float-card .icon-badge svg {
-        width: 22px;
-        height: 22px;
-      }
-      .float-card strong {
-        display: block;
-        font-size: 15px;
-        font-weight: 700;
-      }
-      .float-card span {
-        font-size: 13px;
-        color: var(--gray);
-      }
-      .badge-pill {
-        position: absolute;
-        top: 26px;
-        left: 26px;
-        background: rgba(14, 27, 44, 0.75);
-        backdrop-filter: blur(6px);
-        color: #fff;
-        font-weight: 600;
-        font-size: 13.5px;
-        padding: 9px 16px;
-        border-radius: 999px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .badge-pill svg {
-        width: 15px;
-        height: 15px;
-        color: var(--gold);
-      }
-
-      /* SERVICES */
-      .services {
-        padding: 110px 0;
-        background: #fff;
-      }
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
-      }
-      .service-card {
-        border: 1px solid var(--line);
-        border-radius: var(--radius-md);
-        padding: 34px 30px;
-        transition:
-          box-shadow 0.25s,
-          transform 0.25s,
-          border-color 0.25s;
-      }
-      .service-card:hover {
-        box-shadow: var(--shadow);
-        transform: translateY(-4px);
-        border-color: transparent;
-      }
-      .service-icon {
-        width: 56px;
-        height: 56px;
-        border-radius: 14px;
-        background: var(--cream);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--gold-dark);
-        margin-bottom: 22px;
-      }
-      .service-icon svg {
-        width: 26px;
-        height: 26px;
-      }
-      .service-card h3 {
-        font-size: 21px;
-        margin-bottom: 10px;
-      }
-      .service-card p {
-        color: var(--gray);
-        font-size: 15.5px;
-        line-height: 1.6;
-        margin-bottom: 18px;
-      }
-      .link-arrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        color: var(--gold-dark);
-        font-weight: 700;
-        font-size: 15px;
-        transition: gap 0.2s;
-      }
-      .link-arrow svg {
-        width: 15px;
-        height: 15px;
-        transition: transform 0.2s;
-      }
-      .link-arrow:hover svg {
-        transform: translateX(3px);
-      }
-
-      /* ABOUT */
-      .about {
-        padding: 110px 0;
-        background: var(--bg-soft);
-      }
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-      }
-      .about-media {
-        position: relative;
-      }
-      .about-media .main-img {
-        border-radius: 26px;
-        overflow: hidden;
-        aspect-ratio: 4/4.3;
-        box-shadow: var(--shadow);
-      }
-      .about-media .main-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .rank-badge {
-        position: absolute;
-        top: 24px;
-        left: 24px;
-        background: var(--gold);
-        color: var(--ink);
-        border-radius: 16px;
-        padding: 14px 18px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        box-shadow: 0 12px 24px rgba(214, 147, 31, 0.35);
-        max-width: 230px;
-      }
-      .rank-badge svg {
-        width: 26px;
-        height: 26px;
-        flex-shrink: 0;
-      }
-      .rank-badge strong {
-        display: block;
-        font-size: 16px;
-        font-weight: 800;
-        line-height: 1.2;
-      }
-      .rank-badge span {
-        font-size: 12.5px;
-        font-weight: 600;
-        opacity: 0.85;
-      }
-      .years-card {
-        position: absolute;
-        left: -20px;
-        bottom: -20px;
-        background: #fff;
-        border-radius: 16px;
-        padding: 16px 20px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        box-shadow: var(--shadow-lg);
-      }
-      .years-card .icon-badge {
-        width: 42px;
-        height: 42px;
-        border-radius: 11px;
-        background: var(--cream);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--gold-dark);
-      }
-      .years-card .icon-badge svg {
-        width: 20px;
-        height: 20px;
-      }
-      .years-card strong {
-        display: block;
-        font-size: 19px;
-        font-weight: 800;
-      }
-      .years-card span {
-        font-size: 12.5px;
-        color: var(--gray);
-      }
-      .inset-img {
-        position: absolute;
-        right: -18px;
-        bottom: -25px;
-        width: 44%;
-        border-radius: 16px;
-        overflow: hidden;
-        border: 4px solid #fff;
-        box-shadow: var(--shadow-lg);
-        aspect-ratio: 1/1;
-      }
-      .inset-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .about-content h2 {
-        font-size: 38px;
-        line-height: 1.18;
-        margin-bottom: 22px;
-      }
-      .about-content p {
-        color: var(--gray);
-        font-size: 16.5px;
-        line-height: 1.75;
-        margin-bottom: 18px;
-      }
-      .location-strip {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background: var(--cream);
-        color: var(--gold-dark);
-        font-weight: 600;
-        font-size: 14.5px;
-        padding: 14px 18px;
-        border-radius: 14px;
-        margin: 26px 0 30px;
-      }
-      .location-strip svg {
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-      }
-      .feature-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 22px 28px;
-        margin-bottom: 34px;
-      }
-      .feature-item {
-        display: flex;
-        gap: 14px;
-        align-items: flex-start;
-      }
-      .feature-item .icon-badge {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        background: var(--cream);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--gold-dark);
-        flex-shrink: 0;
-      }
-      .feature-item .icon-badge svg {
-        width: 19px;
-        height: 19px;
-      }
-      .feature-item strong {
-        display: block;
-        font-size: 15.5px;
-        font-weight: 700;
-        margin-bottom: 2px;
-      }
-      .feature-item span {
-        font-size: 13.5px;
-        color: var(--gray);
-      }
-
-      /* GALLERY (custom addition, matching theme) */
-      .gallery {
-        padding: 110px 0;
-        background: #fff;
-      }
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 150px;
-        gap: 16px;
-      }
-      .gallery-item {
-        position: relative;
-        border-radius: 18px;
-        overflow: hidden;
-        grid-column: span 1;
-        grid-row: span 1;
-      }
-      .gallery-item.big {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-      .gallery-item:hover img {
-        transform: scale(1.08);
-      }
-      .gallery-item .tag {
-        position: absolute;
-        left: 14px;
-        bottom: 14px;
-        background: rgba(14, 27, 44, 0.72);
-        backdrop-filter: blur(4px);
-        color: #fff;
-        font-size: 12.5px;
-        font-weight: 600;
-        padding: 7px 13px;
-        border-radius: 999px;
-      }
-      .gallery-cta {
-        text-align: center;
-        margin-top: 44px;
-      }
-
-      .how {
-        background: #fff;
-        padding: 110px 0;
-      }
-      .steps-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 26px;
-      }
-      .step-card {
-        position: relative;
-        min-height: 300px;
-        border: 1px solid #dfe3e8;
-        border-radius: 18px;
-        padding: 37px 38px;
-        box-shadow: 0 3px 7px rgba(20, 30, 45, 0.08);
-        overflow: hidden;
-      }
-      .step-number {
-        position: absolute;
-        top: 12px;
-        right: 24px;
-        font-family: monospace;
-        font-size: 60px;
-        font-weight: 900;
-        color: #f0f2f5;
-        line-height: 1;
-      }
-      .step-icon {
-        position: relative;
-        width: 65px;
-        height: 65px;
-        border-radius: 16px;
-        background: #fbf3df;
-        color: #e2a615;
-        display: grid;
-        place-items: center;
-        font-size: 29px;
-        margin-bottom: 28px;
-      }
-      .step-card h3 {
-        font-size: 22px;
-        line-height: 1.35;
-        margin-bottom: 10px;
-        position: relative;
-      }
-      .step-card p {
-        font-size: 17px;
-        color: #607087;
-        line-height: 1.62;
-        position: relative;
-      }
-      /* RESULTS */
-      .results {
-        padding: 110px 0;
-        background: var(--bg-soft);
-      }
-      .results-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
-      }
-      .result-card {
-        background: #fff;
-        border-radius: var(--radius-md);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-      .ba-imgs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        aspect-ratio: 2/1.35;
-        gap: 3px;
-      }
-      .ba-imgs .ba {
-        position: relative;
-        overflow: hidden;
-      }
-      .ba-imgs .ba:first-child::after{
-        content: "";
-        position: absolute;
-        inset: 0;background: radial-gradient( transparent 50%,  #ff00005e);
-      }
-      .ba-imgs .ba:last-child::after{
-        content: "";
-        position: absolute;
-        inset: 0;background: radial-gradient( transparent 50%,  #02c40234);
-      }
-      .ba-imgs img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .ba-tag {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        font-size: 12px;
-        font-weight: 700;
-        padding: 6px 12px;
-        border-radius: 999px;
-        color: #fff;
-      }
-      .ba-tag.before {
-        background: var(--navy);
-      }
-      .ba-tag.after {
-        background: var(--gold);
-        color: var(--ink);
-      }
-      .result-body {
-        padding: 24px 26px 28px;
-      }
-      .result-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-      }
-      .result-top h3 {
-        font-size: 19px;
-      }
-      .result-body p {
-        color: var(--gray);
-        font-size: 15px;
-        margin-bottom: 14px;
-      }
-
-      /* Added sections */
-      .team {
-        background: #f3f3f3;
-        padding: 110px 0;
-      }
-      .team-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-      }
-      .team-visual {
-        position: relative;
-        
-      }
-      .team-visual > img {
-        width: 100%;
-        height: 620px;
-        object-fit: cover;
-        border-radius: 28px;
-        box-shadow: 0 18px 40px rgba(20, 30, 45, 0.14);
-      }
-      .specialists-card {
-        position: absolute;
-        left: 28px;
-        right: 28px;
-        bottom: -28px;
-        background: #fff;
-        border-radius: 20px;
-        padding: 20px 28px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.16);
-      }
-      .specialists-card strong,
-      .specialists-card small {
-        display: block;
-      }
-      .specialists-card small {
-        color: #607087;
-      }
-      .doctor-dots {
-        margin-left: auto;
-        display: flex;
-      }
-      .doctor-dots span {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        background: #fbf3df;
-        color: #d9a00c;
-        font-size: 13px;
-        font-weight: 700;
-        border: 2px solid #fff;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-left: -5px;
-      }
-      .doctor-dots span:nth-child(2) {
-        background: #e8edf4;
-        color: #4c5d73;
-      }
-      .team-copy h2 {
-        font-size: 47px;
-        line-height: 1.15;
-        margin: 10px 0 25px;
-      }
-      .team-copy span {
-        margin-bottom: 0;
-      }
-
-      .team-copy > p {
-        font-size: 19px;
-        color: #607087;
-        line-height: 1.7;
-        margin-bottom: 30px;
-      }
-      .team-features {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        margin-bottom: 32px;
-      }
-      .team-features > div {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-      }
-      .team-features > div > span {
-        width: 54px;
-        height: 54px;
-        border-radius: 15px;
-        background: #fbf3df;
-        color: #e2a615;
-        display: grid;
-        place-items: center;
-        font-size: 23px;
-        flex: none;
-      }
-      .team-features strong,
-      .team-features small {
-        display: block;
-      }
-      .team-features strong {
-        font-size: 18px;
-      }
-      .team-features small {
-        font-size: 16px;
-        color: #607087;
-        margin-top: 2px;
-      }
-      /* BOOKING */
-      .booking {
-        background: linear-gradient(
-          150deg,
-          var(--navy) 0%,
-          var(--navy-2) 60%,
-          #0c1928 100%
-        );
-        padding: 110px 0;
-        color: #fff;
-      }
-      .booking-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-      }
-      .booking h2 {
-        font-size: 42px;
-        line-height: 1.15;
-        color: #fff;
-        margin: 20px 0 20px;
-      }
-      .booking > .container > .booking-grid > .booking-copy > p {
-        color: #b7c1d1;
-        font-size: 17px;
-        line-height: 1.7;
-        margin-bottom: 34px;
-        max-width: 480px;
-      }
-      .booking-info {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-      .info-row {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-      .info-row .icon-badge {
-        width: 46px;
-        height: 46px;
-        border-radius: 13px;
-        background: rgba(255, 255, 255, 0.08);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        flex-shrink: 0;
-      }
-      .info-row .icon-badge svg {
-        width: 20px;
-        height: 20px;
-      }
-      .info-row span {
-        font-size: 15.5px;
-        color: #dbe1ea;
-        font-weight: 500;
-      }
-      .booking-card {
-        background: #fff;
-        color: var(--ink);
-        border-radius: var(--radius-lg);
-        padding: 40px;
-        box-shadow: var(--shadow-lg);
-      }
-      .booking-card h3 {
-        font-size: 25px;
-        margin-bottom: 8px;
-      }
-      .booking-card > p {
-        color: var(--gray);
-        font-size: 15px;
-        margin-bottom: 26px;
-      }
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-        margin-bottom: 18px;
-      }
-      .field label {
-        display: block;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-      .field input,
-      .field select,
-      .field textarea {
-        width: 100%;
-        border: 1.5px solid var(--line);
-        background: var(--bg-soft);
-        border-radius: 12px;
-        padding: 13px 16px;
-        font-size: 15px;
-        font-family: inherit;
-        color: var(--ink);
-        transition: border-color 0.2s;
-      }
-      .field input:focus,
-      .field select:focus,
-      .field textarea:focus {
-        outline: none;
-        border-color: var(--gold);
-      }
-      .field {
-        margin-bottom: 18px;
-      }
-      .field textarea {
-        resize: vertical;
-        min-height: 100px;
-      }
-
-      .ceo {
-        background: radial-gradient(
-          circle at 90% 12%,
-          #344157 0,
-          #1c2940 27%,
-          #111b31 65%
-        );
-        color: #fff;
-        padding: 92px 0 120px;
-      }
-      .ceo-container {
-        max-width: 1050px;
-      }
-      .ceo-head {
-        text-align: center;
-      }
-      .ceo-pill {
-        background: #ffbd08;
-        color: #111;
-        margin-bottom: 0;
-      }
-      .ceo-head h2 {
-        color: #fbf3df;
-        font-size: 42px;
-        margin: 17px 0 48px;
-        letter-spacing: -1px;
-      }
-      .ceo-card {
-        background: rgba(49, 63, 86, 0.62);
-        border: 1px solid rgba(167, 181, 203, 0.22);
-        border-radius: 28px;
-        padding: 52px 55px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-      }
-      .quote-mark {
-        font-size: 76px;
-        line-height: 0.6;
-        color: #ffca28;
-        font-weight: 800;
-        margin-bottom: 22px;
-      }
-      .ceo-card > p {
-        font-size: 20px;
-        line-height: 1.6;
-        color: #e6e9ef;
-      }
-      .ceo-divider {
-        height: 1px;
-        background: rgba(199, 207, 220, 0.22);
-        margin: 34px 0;
-      }
-      .ceo-profile {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-      }
-      .ceo-profile img {
-        width: 75px;
-        height: 75px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 2px solid #ffca28;
-      }
-      .ceo-profile strong,
-      .ceo-profile small {
-        display: block;
-      }
-      .ceo-profile strong {
-        font-size: 21px;
-      }
-      .ceo-profile small {
-        font-size: 16px;
-        color: #bec7d5;
-        margin-top: 2px;
-      }
-      /* TESTIMONIALS */
-      .testimonials {
-        padding: 110px 0;
-        background: var(--bg-soft);
-      }
-      
-      .review-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-      }
-      .review-card {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-md);
-        padding: 28px 26px;
-      }
-      .review-card .stars {
-        color: var(--gold);
-        margin-bottom: 16px;
-      }
-      .review-card .stars svg {
-        width: 16px;
-        height: 16px;
-      }
-      .review-card blockquote {
-        font-size: 15.5px;
-        line-height: 1.65;
-        color: #374151;
-        margin-bottom: 22px;
-      }
-      .reviewer {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding-top: 18px;
-        border-top: 1px solid var(--line);
-      }
-      .avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: var(--cream);
-        color: var(--gold-dark);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 13px;
-        flex-shrink: 0;
-      }
-      .reviewer strong {
-        display: block;
-        font-size: 14.5px;
-        font-weight: 700;
-      }
-      .reviewer span {
-        font-size: 13px;
-        color: var(--gray);
-      }
-      .testimonial-note {
-        text-align: center;
-        color: var(--gray-light);
-        font-size: 13.5px;
-        margin-top: 30px;
-      }
-
-      /* FAQ */
-      .faq {
-        padding: 110px 0;
-        background: var(--bg-soft);
-      }
-      .faq-list {
-        max-width: 900px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-      .faq-item {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        overflow: hidden;
-      }
-      .faq-q {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 22px 26px;
-        cursor: pointer;
-      }
-      .faq-q h4 {
-        font-size: 16.5px;
-        font-weight: 700;
-      }
-      .faq-toggle {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: var(--cream);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--gold-dark);
-        flex-shrink: 0;
-        transition: transform 0.25s;
-      }
-      .faq-toggle svg {
-        width: 14px;
-        height: 14px;
-      }
-      .faq-item.open .faq-toggle {
-        transform: rotate(180deg);
-      }
-      .faq-a {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-      .faq-item.open .faq-a {
-        max-height: 220px;
-      }
-      .faq-a p {
-        padding: 0 26px 24px;
-        color: var(--gray);
-        font-size: 15px;
-        line-height: 1.7;
-        border-top: 1px solid var(--line);
-        padding-top: 18px;
-        margin-top: -1px;
-      }
-      .faq-more {
-        text-align: center;
-        margin-top: 34px;
-      }
-
-      /* VISIT US */
-      .visit {
-        padding: 110px 0;
-        background: #fff;
-      }
-      .visit-grid {
-        display: grid;
-        grid-template-columns: 0.85fr 1.15fr;
-        gap: 60px;
-      }
-      .visit-info {
-        display: flex;
-        flex-direction: column;
-        gap: 26px;
-      }
-      .visit-row {
-        display: flex;
-        gap: 16px;
-        align-items: flex-start;
-      }
-      .visit-row .icon-badge {
-        width: 46px;
-        height: 46px;
-        border-radius: 13px;
-        background: var(--cream);
-        color: var(--gold-dark);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .visit-row .icon-badge svg {
-        width: 21px;
-        height: 21px;
-      }
-      .visit-row strong {
-        display: block;
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 4px;
-      }
-      .visit-row div p {
-        color: var(--gray);
-        font-size: 15px;
-        line-height: 1.6;
-      }
-      .maps-col {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-      .map-card {
-        border: 1px solid var(--line);
-        border-radius: var(--radius-md);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-      .map-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 18px 22px;
-        background: var(--bg-soft);
-        border-bottom: 1px solid var(--line);
-      }
-      .map-head h4 {
-        font-size: 16.5px;
-      }
-      .map-tag {
-        background: var(--cream);
-        color: var(--gold-dark);
-        font-size: 12.5px;
-        font-weight: 700;
-        padding: 6px 13px;
-        border-radius: 999px;
-      }
-      .map-frame {
-        aspect-ratio: 16/8;
-      }
-      .map-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* FINAL CTA */
-      .final-cta {
-        background:
-          radial-gradient(
-            1000px 450px at 90% 20%,
-            rgba(28, 127, 190, 0.18),
-            transparent 60%
-          ),
-          linear-gradient(
-            160deg,
-            var(--navy) 0%,
-            var(--navy-2) 60%,
-            #0c1928 100%
-          );
-        padding: 100px 0;
-        text-align: center;
-        color: #fff;
-      }
-      .final-cta .eyebrow {
-        margin-bottom: 26px;
-        background: var(--gold);
-        color: var(--ink);
-      }
-      .final-cta h2 {
-        font-size: 46px;
-        line-height: 1.18;
-        color: #fff;
-        max-width: 820px;
-        margin: 0 auto 22px;
-      }
-      .final-cta p {
-        color: #b7c1d1;
-        font-size: 17.5px;
-        line-height: 1.7;
-        max-width: 640px;
-        margin: 0 auto 38px;
-      }
-      .final-cta .hero-actions {
-        justify-content: center;
-        margin-bottom: 26px;
-      }
-      .final-cta .hero-trust {
-        justify-content: center;
-      }
-
-      /* FOOTER */
-      footer {
-        background: var(--navy-3);
-        color: #c9d1dc;
-        padding: 80px 0 30px;
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
-        gap: 50px;
-        margin-bottom: 60px;
-      }
-      .footer-brand .logo {
-        margin-bottom: 18px;
-      }
-      .footer-brand p {
-        font-size: 14.5px;
-        line-height: 1.7;
-        color: #93a0b1;
-        margin-bottom: 24px;
-        max-width: 280px;
-      }
-      .social-row {
-        display: flex;
-        gap: 12px;
-      }
-      .social-row a {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.06);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.2s;
-      }
-      .social-row a:hover {
-        background: var(--gold);
-        color: var(--ink);
-      }
-      .social-row svg {
-        width: 17px;
-        height: 17px;
-      }
-      footer h5 {
-        color: #fff;
-        font-size: 16.5px;
-        margin-bottom: 22px;
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-      .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-      }
-      .footer-links a {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 14.5px;
-        color: #a9b3c1;
-        transition: color 0.2s;
-      }
-      .footer-links a:hover {
-        color: var(--gold);
-      }
-      .footer-links svg {
-        width: 13px;
-        height: 13px;
-        color: var(--gold-dark);
-        flex-shrink: 0;
-      }
-      .footer-contact-row {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-        margin-bottom: 16px;
-        font-size: 14.5px;
-        color: #a9b3c1;
-      }
-      .footer-contact-row svg {
-        width: 17px;
-        height: 17px;
-        color: var(--gold);
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        padding-top: 26px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-        font-size: 13.5px;
-        color: #7c869a;
-      }
-      /* RESPONSIVE */
-
-      @media (max-width: 1100px) {
-        .team-grid {
-          grid-template-columns: 1fr;
-        }
-        .team-visual{
-          max-height: 440px;
-        }
-        .team-visual > img {
-          height: 440px;
-        }
-        .team-copy {
-          padding-top: 30px;
-        }
-        .steps-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (max-width: 760px) {
-        .team-visual > img {
-          height: 440px;
-        }
-        .specialists-card {
-          left: 14px;
-          right: 14px;
-          padding: 15px 17px;
-        }
-        .doctor-dots span {
-          width: 34px;
-          height: 34px;
-          font-size: 11px;
-        }
-        .team-copy h2 {
-          font-size: 36px;
-        }
-        .team-copy > p {
-          font-size: 17px;
-        }
-        .steps-grid {
-          grid-template-columns: 1fr;
-        }
-        .step-card {
-          min-height: 290px;
-          padding: 30px;
-        }
-        .ceo {
-          padding: 70px 0 90px;
-        }
-        .ceo-head h2 {
-          font-size: 34px;
-          margin-bottom: 35px;
-        }
-        .ceo-card {
-          padding: 32px 25px;
-          border-radius: 22px;
-        }
-        .ceo-card > p {
-          font-size: 17px;
-        }
-      }
-      @media (max-width: 1024px) {
-        nav.links {
-          display: none;
-        }
-        .burger {
-          display: block;
-        }
-        .hero-grid,
-        .about-grid,
-        .booking-grid,
-        .visit-grid {
-          grid-template-columns: 1fr;
-        }.hero-media .frame{
-          min-height: 380px;
-        }
-        .services-grid,
-        .results-grid,
-        .review-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .gallery-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .gallery-item.big {
-          grid-column: span 2;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .container {
-        }
-        .hero h1 {
-          font-size: 38px;
-        }
-        .section-head h2 {
-          font-size: 30px;
-        }
-        .services-grid,
-        .results-grid,
-        .review-grid,
-        .form-row,
-        .feature-grid {
-          grid-template-columns: 1fr;
-        }
-        .footer-grid {
-          grid-template-columns: 1fr;
-          gap: 36px;
-        }
-        .hero-stats {
-          gap: 20px;
-        }
-        .rating-stats {
-          gap: 24px;
-        }
-        .nav-right .btn-sm {
-          padding: 10px 16px;
-          font-size: 13px;
-        }
-        .nav-phone {
-          display: none;
-        }
-        .gallery-grid {
-          grid-template-columns: 1fr 1fr;
-          grid-auto-rows: 120px;
-        }
-        .final-cta h2 {
-          font-size: 32px;
-        }
-        .booking-card {
-          padding: 26px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- ICON SPRITE (symbols reused across the page) -->
@@ -1968,9 +338,9 @@
 
     <header>
       <div class="nav-wrap">
-        <a href="#" class="logo"
-          >
-          <span>[Your Logo]</span></a
+        <a href="" class="logo"
+          ><img src="./assets/logo.jpeg" alt="" class="logo-img" />
+          <span>AB-Elshaday <strong> Speciality Dental Clinic</strong></span></a
         >
         <nav class="links">
           <a href="about.html">About Us</a>
@@ -1981,12 +351,13 @@
         </nav>
         <div class="nav-right">
           <div class="nav-phone">
-            <svg><use href="#i-phone" /></svg>+251900000000
+            <svg><use href="#i-phone" /></svg>+251912345678
           </div>
           <a href="booking.html" class="btn btn-gold btn-sm"
             >Book My Appointment</a
           >
         </div>
+        <div class="menu-btn"><span></span><span></span><span></span></div>
       </div>
     </header>
 
@@ -1997,34 +368,34 @@
 
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow dark"
+          <span class="eyebrow dark reveal"
             ><svg><use href="#i-award" /></svg>The Country's #1 Dental
             Clinic</span
           >
-          <h1>
+          <h1 class="reveal">
             Your Healthiest,
             <span class="gold-text">Most Confident Smile</span> Starts Here
           </h1>
-          <p class="lead">
+          <p class="lead reveal">
             From routine check-ups to complete smile makeovers, our expert team
             delivers gentle, world-class dental care in a modern, comfortable
             clinic — so you can smile without hesitation.
           </p>
-          <div class="hero-actions">
-            <a href="booking.html" class="btn btn-gold"
+          <div class="hero-actions reveal">
+            <a href="booking.html" class="btn btn-gold reveal"
               ><svg><use href="#i-calendar" /></svg>Book My Appointment</a
             >
-            <a href="tel:+251900000000" class="btn btn-outline-dark"
+            <a href="tel:+251912345678" class="btn btn-outline-dark reveal"
               ><svg><use href="#i-phone" /></svg>Call the Clinic</a
             >
           </div>
-          <div class="hero-trust">
+          <div class="hero-trust reveal">
             <svg><use href="#i-shield" /></svg>Free consultation &nbsp;·&nbsp;
             Gentle, pain-free care &nbsp;·&nbsp; Two branches in Addis Ababa
             &amp; Hawassa
           </div>
           <div class="hero-stats">
-            <div class="stat-block">
+            <div class="stat-block reveal">
               <div class="stars">
                 <svg><use href="#i-star" /></svg
                 ><svg><use href="#i-star" /></svg
@@ -2035,16 +406,16 @@
               <small>4.9/5 from 2,000+ happy patients</small>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-block">
-              <span class="num">15+</span><small>Years of Excellence</small>
+            <div class="stat-block reveal">
+              <span class="num">5+</span><small>Years of Excellence</small>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-block">
+            <div class="stat-block reveal">
               <span class="num">50k+</span><small>Smiles Transformed</small>
             </div>
           </div>
         </div>
-        <div class="hero-media">
+        <div class="hero-media reveal">
           <div class="frame">
             <img
               src="./assets/hero-img.jpg"
@@ -2070,7 +441,7 @@
     <!-- SERVICES -->
     <section class="services" id="services">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal reveal">
           <span class="eyebrow"
             ><svg><use href="#i-brush" /></svg>Our Services</span
           >
@@ -2081,7 +452,7 @@
           </p>
         </div>
         <div class="services-grid">
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-icon">
               <svg><use href="#i-brush" /></svg>
             </div>
@@ -2094,7 +465,7 @@
               >Get Service <svg><use href="#i-arrow" /></svg
             ></a>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-icon">
               <svg><use href="#i-sparkle" /></svg>
             </div>
@@ -2107,7 +478,7 @@
               >Get Service <svg><use href="#i-arrow" /></svg
             ></a>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-icon">
               <svg><use href="#i-smile2" /></svg>
             </div>
@@ -2120,7 +491,7 @@
               >Get Service <svg><use href="#i-arrow" /></svg
             ></a>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-icon">
               <svg><use href="#i-scan" /></svg>
             </div>
@@ -2133,7 +504,7 @@
               >Get Service <svg><use href="#i-arrow" /></svg
             ></a>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-icon">
               <svg><use href="#i-pulse" /></svg>
             </div>
@@ -2146,7 +517,7 @@
               >Get Service <svg><use href="#i-arrow" /></svg
             ></a>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-icon">
               <svg><use href="#i-smile" /></svg>
             </div>
@@ -2166,7 +537,7 @@
     <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container about-grid">
-        <div class="about-media">
+        <div class="about-media reveal">
           <div class="main-img">
             <img src="./assets/about-img.jpg" />
           </div>
@@ -2189,13 +560,13 @@
             <div><strong>15+</strong><span>Years of Excellence</span></div>
           </div>
         </div>
-        <div class="about-content">
+        <div class="about-content reveal">
           <span class="eyebrow"
-            ><svg><use href="#i-heart" /></svg>About [Your Comapny]</span
+            ><svg><use href="#i-heart" /></svg>About AB-elshaday</span
           >
           <h2>A Legacy of Care, A Future of Confident Smiles</h2>
           <p>
-            For over 15 years, [Your Company] has been the country's most trusted
+            For over 5 years, AB-elshaday has been the country's most trusted
             name in dentistry. Our clinic combines state-of-the-art technology
             with a warm, patient-first approach — because great dental care
             should never feel intimidating.
@@ -2210,7 +581,7 @@
             — Addis Ababa &amp; Hawassa
           </div>
           <div class="feature-grid">
-            <div class="feature-item">
+            <div class="feature-item reveal">
               <div class="icon-badge">
                 <svg><use href="#i-users" /></svg>
               </div>
@@ -2219,7 +590,7 @@
                 ><span>A team of highly trained dentists</span>
               </div>
             </div>
-            <div class="feature-item">
+            <div class="feature-item reveal">
               <div class="icon-badge">
                 <svg><use href="#i-shield" /></svg>
               </div>
@@ -2228,7 +599,7 @@
                 ><span>Hospital-grade hygiene standards</span>
               </div>
             </div>
-            <div class="feature-item">
+            <div class="feature-item reveal">
               <div class="icon-badge">
                 <svg><use href="#i-sparkle" /></svg>
               </div>
@@ -2237,7 +608,7 @@
                 ><span>Latest digital dentistry tools</span>
               </div>
             </div>
-            <div class="feature-item">
+            <div class="feature-item reveal">
               <div class="icon-badge">
                 <svg><use href="#i-heart" /></svg>
               </div>
@@ -2247,7 +618,7 @@
               </div>
             </div>
           </div>
-          <a href="about.html" class="btn btn-gold"
+          <a href="about.html" class="btn btn-gold reveal"
             >Discover Our Story <svg><use href="#i-arrow" /></svg
           ></a>
         </div>
@@ -2256,7 +627,7 @@
 
     <section id="how-it-works" class="section how">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">ϟ &nbsp; How It Works</span>
           <h2>Getting Started Is Simple</h2>
           <p>
@@ -2266,7 +637,7 @@
           </p>
         </div>
         <div class="steps-grid">
-          <article class="step-card">
+          <article class="step-card reveal">
             <span class="step-number">01</span>
             <div class="step-icon">⌕</div>
             <h3>Book Your Visit</h3>
@@ -2275,7 +646,7 @@
               branch that suits you best.
             </p>
           </article>
-          <article class="step-card">
+          <article class="step-card reveal">
             <span class="step-number">02</span>
             <div class="step-icon">♧</div>
             <h3>Get Examined</h3>
@@ -2284,7 +655,7 @@
               explain every option clearly.
             </p>
           </article>
-          <article class="step-card">
+          <article class="step-card reveal">
             <span class="step-number">03</span>
             <div class="step-icon">✧</div>
             <h3>Receive Treatment</h3>
@@ -2293,7 +664,7 @@
               tailored precisely to you.
             </p>
           </article>
-          <article class="step-card">
+          <article class="step-card reveal">
             <span class="step-number">04</span>
             <div class="step-icon">☺</div>
             <h3>Smile With Confidence</h3>
@@ -2309,7 +680,7 @@
     <!-- RESULTS -->
     <section class="results" id="results">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow"
             ><svg><use href="#i-sparkle" /></svg>Real Results</span
           >
@@ -2320,7 +691,7 @@
           </p>
         </div>
         <div class="results-grid">
-          <div class="result-card">
+          <div class="result-card reveal">
             <div class="ba-imgs">
               <div class="ba">
                 <span class="ba-tag before">Before</span
@@ -2348,7 +719,7 @@
               ></a>
             </div>
           </div>
-          <div class="result-card">
+          <div class="result-card reveal">
             <div class="ba-imgs">
               <div class="ba">
                 <span class="ba-tag before">Before</span
@@ -2376,7 +747,7 @@
               ></a>
             </div>
           </div>
-          <div class="result-card">
+          <div class="result-card reveal">
             <div class="ba-imgs">
               <div class="ba">
                 <span class="ba-tag before">Before</span
@@ -2408,95 +779,33 @@
       </div>
     </section>
 
-    <section id="team" class="section team">
-      <div class="container team-grid">
-        <div class="team-visual">
-          <img
-            src="assets/team image.jfif"
-            alt="[Your Company] dental specialists"
-          />
-          <div class="specialists-card">
-            <div class="round-icon">♧</div>
-            <div>
-              <strong>20+ Specialists</strong><small>Across two branches</small>
-            </div>
-            <div class="doctor-dots">
-              <span><img src="./assets/gril-doctor-1.webp" width="30px"></span><span><img src="./assets/men-doctor-1.webp" width="30px"></span><span><img src="./assets/girl-doctor-2.webp" width="30px"></span>
-            </div>
-          </div>
-        </div>
-        <div class="team-copy">
-          <span class="eyebrow">♧ &nbsp; Meet Our Team</span>
-          <h2>The Smiles Behind the Smiles</h2>
-          <p>
-            Behind every confident smile is a team of dedicated specialists who
-            make it happen. Our dentists, hygienists, and support staff work
-            together to give you the gentle, world-class care [Your Company] is
-            known for.
-          </p>
-          <div class="team-features">
-            <div>
-              <span>♙</span>
-              <div>
-                <strong>Highly Trained</strong
-                ><small
-                  >Specialists across general, cosmetic, implant &amp;
-                  orthodontic care</small
-                >
-              </div>
-            </div>
-            <div>
-              <span>♡</span>
-              <div>
-                <strong>Patient-First</strong
-                ><small
-                  >Warm, judgment-free care that puts your comfort above
-                  all</small
-                >
-              </div>
-            </div>
-            <div>
-              <span>♢</span>
-              <div>
-                <strong>Sterile &amp; Safe</strong
-                ><small
-                  >Hospital-grade hygiene and modern equipment in every
-                  room</small
-                >
-              </div>
-            </div>
-          </div>
-          <a class="btn btn-gold" href="#contact">Meet Us in Person &nbsp; →</a>
-        </div>
-      </div>
-    </section>
     <!-- BOOKING -->
     <section class="booking" id="booking">
       <div class="container booking-grid">
         <div class="booking-copy">
-          <span class="eyebrow dark"
+          <span class="eyebrow dark reveal"
             ><svg><use href="#i-calendar" /></svg>Book Your Visit</span
           >
-          <h2>Ready for a Healthier, Brighter Smile?</h2>
-          <p>
+          <h2 class="reveal">Ready for a Healthier, Brighter Smile?</h2>
+          <p class="reveal">
             Request your appointment today and our friendly team will confirm
             your visit within 24 hours. Your comfort and care are our top
             priority.
           </p>
           <div class="booking-info">
-            <div class="info-row">
+            <div class="info-row reveal">
               <div class="icon-badge">
                 <svg><use href="#i-clock" /></svg>
               </div>
               <span>Open 7 days a week, 9am – 9pm</span>
             </div>
-            <div class="info-row">
+            <div class="info-row reveal">
               <div class="icon-badge">
                 <svg><use href="#i-phone" /></svg>
               </div>
-              <span>Call us: +251900000000</span>
+              <span>Call us: +251912345678</span>
             </div>
-            <div class="info-row">
+            <div class="info-row reveal">
               <div class="icon-badge">
                 <svg><use href="#i-map" /></svg>
               </div>
@@ -2504,7 +813,7 @@
             </div>
           </div>
         </div>
-        <div class="booking-card">
+        <div class="booking-card reveal">
           <h3>Request an Appointment</h3>
           <p>Fill in your details and we'll get back to you shortly.</p>
           <form onsubmit="return false;">
@@ -2550,10 +859,78 @@
               <label>Message (optional)</label
               ><textarea placeholder="Tell us about your needs"></textarea>
             </div>
-            <button type="submit" class="btn btn-gold btn-block">
+            <button type="submit" class="btn btn-gold btn-block submit-btn">
               Request My Appointment
             </button>
           </form>
+        </div>
+      </div>
+    </section>
+    <section id="team" class="section team">
+      <div class="container team-grid">
+        <div class="team-visual reveal">
+          <img
+            src="assets/team image.jfif"
+            alt="AB-elshaday dental specialists"
+          />
+          <div class="specialists-card">
+            <div class="round-icon">♧</div>
+            <div>
+              <strong>20+ Specialists</strong><small>Across two branches</small>
+            </div>
+            <div class="doctor-dots">
+              <span><img src="./assets/gril-doctor-1.webp" width="30px" /></span
+              ><span><img src="./assets/men-doctor-1.webp" width="30px" /></span
+              ><span
+                ><img src="./assets/girl-doctor-2.webp" width="30px"
+              /></span>
+            </div>
+          </div>
+        </div>
+        <div class="team-copy reveal">
+          <span class="eyebrow reveal">♧ &nbsp; Meet Our Team</span>
+          <h2>The Dentiest Behind the Smiles</h2>
+          <p class="reveal">
+            Behind every confident smile is a team of dedicated specialists who
+            make it happen. Our dentists, hygienists, and support staff work
+            together to give you the gentle, world-class care AB-elshaday is
+            known for.
+          </p>
+          <div class="team-features">
+            <div class="reveal">
+              <span>♙</span>
+              <div>
+                <strong>Highly Trained</strong
+                ><small
+                  >Specialists across general, cosmetic, implant &amp;
+                  orthodontic care</small
+                >
+              </div>
+            </div>
+            <div class="reveal">
+              <span>♡</span>
+              <div>
+                <strong>Patient-First</strong
+                ><small
+                  >Warm, judgment-free care that puts your comfort above
+                  all</small
+                >
+              </div>
+            </div>
+            <div class="reveal">
+              <span>♢</span>
+              <div>
+                <strong>Sterile &amp; Safe</strong
+                ><small
+                  >Hospital-grade hygiene and modern equipment in every
+                  room</small
+                >
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-gold reveal" href="#contact"
+            >Meet Us in Person &nbsp; →</a
+          >
         </div>
       </div>
     </section>
@@ -2561,7 +938,7 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow"
             ><svg><use href="#i-help" /></svg>FAQ</span
           >
@@ -2572,7 +949,7 @@
           </p>
         </div>
         <div class="faq-list">
-          <div class="faq-item open">
+          <div class="faq-item reveal open">
             <div class="faq-q" onclick="toggleFaq(this)">
               <h4>How often should I visit the dentist?</h4>
               <div class="faq-toggle">
@@ -2588,7 +965,7 @@
               </p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <div class="faq-q" onclick="toggleFaq(this)">
               <h4>Is the dental treatment painful?</h4>
               <div class="faq-toggle">
@@ -2603,7 +980,7 @@
               </p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <div class="faq-q" onclick="toggleFaq(this)">
               <h4>Do you accept dental insurance?</h4>
               <div class="faq-toggle">
@@ -2618,7 +995,7 @@
               </p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <div class="faq-q" onclick="toggleFaq(this)">
               <h4>How can I book an appointment?</h4>
               <div class="faq-toggle">
@@ -2633,7 +1010,7 @@
               </p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <div class="faq-q" onclick="toggleFaq(this)">
               <h4>What should I do in a dental emergency?</h4>
               <div class="faq-toggle">
@@ -2648,7 +1025,7 @@
               </p>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <div class="faq-q" onclick="toggleFaq(this)">
               <h4>Is teeth whitening safe?</h4>
               <div class="faq-toggle">
@@ -2665,7 +1042,7 @@
           </div>
         </div>
         <div class="faq-more">
-          <a href="#" class="link-arrow" style="font-size: 16px"
+          <a href="#" class="link-arrow reveal" style="font-size: 16px"
             >View all questions <svg><use href="#i-arrow" /></svg
           ></a>
         </div>
@@ -2676,26 +1053,26 @@
       <div class="shadow gold-shadow hero-goldshadow"></div>
       <div class="shadow light-shadow hero-lightshadow"></div>
       <div class="container ceo-container">
-        <div class="ceo-head">
+        <div class="ceo-head reveal">
           <div class="eyebrow ceo-pill">❞ &nbsp; A Message From Our CEO</div>
           <h2>"Your Smile Is Our Mission"</h2>
         </div>
-        <div class="ceo-card">
+        <div class="ceo-card reveal">
           <div class="quote-mark">”</div>
           <p>
-            "For over fifteen years, my goal has never changed: to bring the
+            "For over five years, my goal has never changed: to bring the
             finest dental care to every family in this country — with dignity,
-            comfort, and honesty. At [Your Company], we don't just treat teeth; we
+            comfort, and honesty. At AB-elshaday, we don't just treat teeth; we
             restore confidence and change lives. Every patient who walks through
             our doors becomes part of our family, and we treat you exactly as we
             would treat our own. Thank you for trusting us with your smile."
           </p>
           <div class="ceo-divider"></div>
           <div class="ceo-profile">
-            <img src="assets/men-doctor-1.webp" alt="CEO portrait" />
+            <img src="./assets/ceo.jpg" alt="CEO portrait" />
             <div>
-              <strong>Dr. [Your Name]</strong
-              ><small>Founder &amp; Chief Executive Officer, [Your Company]</small>
+              <strong>Dr. Wendesen Haile</strong
+              ><small>Founder &amp; Chief Executive Officer, AB-elshaday</small>
             </div>
           </div>
         </div>
@@ -2705,19 +1082,19 @@
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow"
             ><svg><use href="#i-quote" /></svg>Testimonials</span
           >
           <h2>Trusted by Thousands of Happy Patients</h2>
           <p>
             Our patients' trust is our greatest achievement. Discover why
-            [Your Company] is the country's number one dental clinic.
+            AB-elshaday is the country's number one dental clinic.
           </p>
         </div>
-        
+
         <div class="review-grid">
-          <div class="review-card">
+          <div class="review-card reveal">
             <div class="stars">
               <svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
               ><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
@@ -2725,17 +1102,17 @@
             </div>
             <blockquote>
               "I was terrified of the dentist for years, but the team at
-              [Your Company] completely changed that. Gentle, caring, and so
+              AB-elshaday completely changed that. Gentle, caring, and so
               professional — I actually look forward to my visits now."
             </blockquote>
             <div class="reviewer">
               <div class="avatar">PN</div>
               <div>
-                <strong>Patient Name</strong><span>General Check-up</span>
+                <strong>Bezawit mulatu</strong><span>General Check-up</span>
               </div>
             </div>
           </div>
-          <div class="review-card">
+          <div class="review-card reveal">
             <div class="stars">
               <svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
               ><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
@@ -2749,11 +1126,11 @@
             <div class="reviewer">
               <div class="avatar">PN</div>
               <div>
-                <strong>Patient Name</strong><span>Smile Makeover</span>
+                <strong>fitsum negash</strong><span>Smile Makeover</span>
               </div>
             </div>
           </div>
-          <div class="review-card">
+          <div class="review-card reveal">
             <div class="stars">
               <svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
               ><svg><use href="#i-star" /></svg><svg><use href="#i-star" /></svg
@@ -2767,14 +1144,13 @@
             <div class="reviewer">
               <div class="avatar">PN</div>
               <div>
-                <strong>Patient Name</strong><span>Dental Implant</span>
+                <strong>tamirat wendemagegn</strong><span>Dental Implant</span>
               </div>
             </div>
           </div>
         </div>
-        <p class="testimonial-note">
-          Sample testimonials shown as placeholders — replace with your real
-          patient reviews.
+        <p class="testimonial-note reveal">
+          real patient reviews that help us to deliver qulity care.
         </p>
       </div>
     </section>
@@ -2782,7 +1158,7 @@
     <!-- GALLERY (designed to match, no source image was provided) -->
     <section class="gallery" id="gallery">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow"
             ><svg><use href="#i-scan" /></svg>Gallery</span
           >
@@ -2793,36 +1169,49 @@
           </p>
         </div>
         <div class="gallery-grid">
-          <div class="gallery-item big">
+          <div class="gallery-item reveal big">
             <img src="./assets/about-img.jpg" alt="Treatment room" /><span
               class="tag"
               >Treatment Room</span
             >
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item reveal">
             <img src="./assets/gallery-img2.webp" alt="Dental tools" /><span
               class="tag"
               >Modern Tools</span
             >
           </div>
-          <div class="gallery-item">
-            <img
-              src="./assets/reception.jfif"
-              alt="Reception area"
-            /><span class="tag">Reception</span>
+          <div class="gallery-item reveal">
+            <img src="./assets/reception.jfif" alt="Reception area" /><span
+              class="tag"
+              >Reception</span
+            >
           </div>
-          <div class="gallery-item">
-            <img src="./assets/team image.jfif" alt="Dentist at work" /><span class="tag"
+          <div class="gallery-item reveal">
+            <img src="./assets/team image.jfif" alt="Dentist at work" /><span
+              class="tag"
               >Our Team</span
             >
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item reveal">
             <img src="./assets/gallery-3.avif" alt="Patient smiling" /><span
               class="tag"
               >Happy Patients</span
             >
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item reveal">
+            <img src="./assets/happy client.jfif" alt="Clinic hallway" /><span
+              class="tag"
+              >Our Clinic</span
+            >
+          </div>
+          <div class="gallery-item reveal">
+            <img
+              src="./assets/istockphoto-1149906309-1024x1024.jpg"
+              alt="Clinic hallway"
+            /><span class="tag">Implant Service</span>
+          </div>
+          <div class="gallery-item reveal gallery-long">
             <img src="./assets/happy client.jfif" alt="Clinic hallway" /><span
               class="tag"
               >Our Clinic</span
@@ -2842,7 +1231,7 @@
     <!-- VISIT US -->
     <section class="visit" id="visit">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow"
             ><svg><use href="#i-map" /></svg>Visit Us</span
           >
@@ -2853,55 +1242,60 @@
           </p>
         </div>
         <div class="visit-grid">
-          <div class="visit-info">
-            <div class="visit-row">
-              <div class="icon-badge">
-                <svg><use href="#i-pin" /></svg>
+          <div class="visit-info-con">
+            <div class="visit-info">
+              <div class="visit-row reveal">
+                <div class="icon-badge">
+                  <svg><use href="#i-pin" /></svg>
+                </div>
+                <div>
+                  <strong>Our Branches</strong>
+                  <p>
+                    Addis Ababa — Bole Road, Addis Ababa<br />Hawassa — Main
+                    Street, Hawassa
+                  </p>
+                </div>
               </div>
-              <div>
-                <strong>Our Branches</strong>
-                <p>
-                  Addis Ababa — Bole Road, Addis Ababa<br />Hawassa — Main
-                  Street, Hawassa
-                </p>
+              <div class="visit-row reveal">
+                <div class="icon-badge">
+                  <svg><use href="#i-phone" /></svg>
+                </div>
+                <div>
+                  <strong>Call Us</strong>
+                  <p>+251912345678<br />+20 123 456 7891</p>
+                </div>
               </div>
+              <div class="visit-row reveal">
+                <div class="icon-badge">
+                  <svg><use href="#i-mail" /></svg>
+                </div>
+                <div>
+                  <strong>Email Us</strong>
+                  <p>hello@ab-elshaday.com<br />appointments@ab-elshaday.com</p>
+                </div>
+              </div>
+              <div class="visit-row reveal">
+                <div class="icon-badge">
+                  <svg><use href="#i-clock" /></svg>
+                </div>
+                <div>
+                  <strong>Opening Hours</strong>
+                  <p>
+                    Mon – Sat: 9:00am – 9:00pm<br />Sunday: 10:00am – 6:00pm
+                  </p>
+                </div>
+              </div>
+              <a
+                href="contact.html"
+                class="btn btn-gold"
+                style="align-self: flex-start"
+                >Contact Us <svg><use href="#i-arrow" /></svg
+              ></a>
             </div>
-            <div class="visit-row">
-              <div class="icon-badge">
-                <svg><use href="#i-phone" /></svg>
-              </div>
-              <div>
-                <strong>Call Us</strong>
-                <p>+251900000000<br />+20 123 456 7891</p>
-              </div>
-            </div>
-            <div class="visit-row">
-              <div class="icon-badge">
-                <svg><use href="#i-mail" /></svg>
-              </div>
-              <div>
-                <strong>Email Us</strong>
-                <p>hello@[Your Company].com<br />appointments@[Your Company].com</p>
-              </div>
-            </div>
-            <div class="visit-row">
-              <div class="icon-badge">
-                <svg><use href="#i-clock" /></svg>
-              </div>
-              <div>
-                <strong>Opening Hours</strong>
-                <p>Mon – Sat: 9:00am – 9:00pm<br />Sunday: 10:00am – 6:00pm</p>
-              </div>
-            </div>
-            <a
-              href="contact.html"
-              class="btn btn-gold"
-              style="align-self: flex-start"
-              >Contact Us <svg><use href="#i-arrow" /></svg
-            ></a>
+            <div class="visit-table"></div>
           </div>
           <div class="maps-col">
-            <div class="map-card">
+            <div class="map-card reveal">
               <div class="map-head">
                 <h4>Addis Ababa Branch</h4>
                 <span class="map-tag">Bole Road</span>
@@ -2916,7 +1310,22 @@
                 ></iframe>
               </div>
             </div>
-           
+          </div>
+        </div>
+
+        <div class="map-card main-map reveal">
+          <div class="map-head">
+            <h4>Hawassa Branch</h4>
+            <span class="map-tag">Main Street</span>
+          </div>
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=Main+Street,+Hawassa,+Ethiopia&output=embed"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -2927,24 +1336,24 @@
       <div class="shadow gold-shadow final-goldshadow"></div>
       <div class="shadow light-shadow final-lightshadow"></div>
       <div class="container">
-        <span class="eyebrow"
+        <span class="eyebrow reveal"
           ><svg><use href="#i-smile" /></svg>Premium Dental Care</span
         >
-        <h2>Experience the #1 Dental Care in the Country</h2>
-        <p>
+        <h2 class="reveal">Experience the #1 Dental Care in the Country</h2>
+        <p class="reveal">
           Don't wait — your healthiest, most confident smile is one appointment
           away. Our expert team is ready to give you the gentle, world-class
           care you deserve.
         </p>
         <div class="hero-actions">
-          <a href="booking.html" class="btn btn-gold"
+          <a href="booking.html" class="btn btn-gold reveal"
             ><svg><use href="#i-calendar" /></svg>Book My Appointment</a
           >
-          <a href="tel:+251900000000" class="btn btn-outline-dark"
+          <a href="tel:+251912345678" class="btn btn-outline-dark reveal"
             ><svg><use href="#i-phone" /></svg>Call the Clinic</a
           >
         </div>
-        <div class="hero-trust">
+        <div class="hero-trust reveal">
           Free consultation &nbsp;·&nbsp; Response within 24 hours &nbsp;·&nbsp;
           Trusted by 50,000+ patients
         </div>
@@ -2957,12 +1366,12 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="#" class="logo footer-logo"
-              >
-              <span>[Your Company] <strong> Dental</strong></span></a
+              ><img src="./assets/logo.jpeg" alt="" class="logo-img" />
+              <span>AB-Elshaday <strong>Speciality Dental Clinic</strong></span></a
             >
             <p>
               The country's number one dental clinic, delivering gentle,
-              world-class care and confident smiles for over 15 years.
+              world-class care and confident smiles for over 5 years.
             </p>
             <div class="social-row">
               <a href="#" aria-label="Facebook"
@@ -3029,11 +1438,11 @@
               ><span>Addis Ababa — Bole Road<br />Hawassa — Main Street</span>
             </div>
             <div class="footer-contact-row">
-              <svg><use href="#i-phone" /></svg><span>+251900000000</span>
+              <svg><use href="#i-phone" /></svg><span>+251912345678</span>
             </div>
             <div class="footer-contact-row">
               <svg><use href="#i-mail" /></svg
-              ><span>hello@[Your Company].com</span>
+              ><span>hello@ab-elshaday.com</span>
             </div>
             <div class="footer-contact-row">
               <svg><use href="#i-clock" /></svg
@@ -3048,21 +1457,12 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2026 [Your Company] Dental Clinic. All rights reserved.</span>
+          <span>© 2026 AB-elshaday Dental Clinic. All rights reserved.</span>
           <span>Privacy Policy &nbsp;·&nbsp; Terms of Service</span>
         </div>
       </div>
     </footer>
 
-    <script>
-      function toggleFaq(headEl) {
-        const item = headEl.parentElement;
-        const wasOpen = item.classList.contains("open");
-        document
-          .querySelectorAll(".faq-item.open")
-          .forEach((el) => el.classList.remove("open"));
-        if (!wasOpen) item.classList.add("open");
-      }
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
